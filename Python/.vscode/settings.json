@@ -1,5 +1,9 @@
 {
   "python.pythonPath": "C:\\Program Files\\Python38\\python.exe",
   "editor.formatOnSave": true,
-  "editor.insertSpaces": false
+  "editor.insertSpaces": false,
+  "python.autoComplete.extraPaths": [
+    "C:/Program Files/Python38/Lib/site-packages",
+    "C:/Program Files/Python38/Scripts"
+  ]
 }

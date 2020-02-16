@@ -4,15 +4,11 @@
 # for name in names:
 #   print(name)
 
-people = {
-  'age': '10',
-  'name': 'jack',
-  'sex': 'male'
-  }
+people = {'age': '10', 'name': 'jack', 'sex': 'male'}
 
 adds = []
 
 adds = people.items()
 
 for v in adds:
-  print(v[0])
+    print(v[0])

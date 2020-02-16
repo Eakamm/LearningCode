@@ -1,6 +1,4 @@
-names = ['ff','fffff','sdss']
+names = ['ff', 'fffff', 'sdss']
 
 for name in names:
-  print(name)
-
-
+    print(name)
