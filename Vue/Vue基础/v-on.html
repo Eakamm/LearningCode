@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>haha</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<style>
+			.active{
+				color: #00FFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<!-- <ul>
+				<li></li>
+			</ul> -->
+			<p v-for="(key, value) in status" v-show="key">{{value}}</p>
+			<!-- 函数需要参数但是没有传参数，不报错，传入值为undefined -->
+			<button @click="change()">函数需要参数没有传参数</button>
+			<button @click="change(2)">函数需要参数有传参数</button>
+			<!-- 函数需要参数没有写括号，Vue会将产生的事件传入（不可以加括号，加了就不会传入事件） -->
+			<button @click="change">函数需要参数没有写括号</button>
+			<!-- 加括号传入事件 -->
+			<button @click="change($event)">传入事件</button>
+			
+			<!-- 修饰符 -->
+			<!-- .stop 防止冒泡（当@click在其他的@click所修饰的内容里时，点击内部@click事件，外部也会触发）-->
+			<div @click="change(1)">
+				hhhhhhhhhhhhhhhhhhh
+				<button @click.stop="change(2)">冒泡</button>
+			</div>
+			
+			<!-- .prevent 防止自动提交 -->
+			<form action="hhh">
+				<input type="submit" @click.prevent="change()" value="prevent防止自动提交"/>
+			</form>
+			
+			<!-- keyup 键盘监听 .enter单独监听回车.....-->
+			<input @keyup.enter="change('按下键盘')" />
+			
+			<!-- vue底层复用 -->
+			<div v-if="isShow">
+				<label for="account">账号</label>
+				<input type="text" id="account" placeholder="输入账号"/>
+			</div>
+			<div v-else>
+				<label for="email">邮箱</label>
+				<input type="text" id="email" placeholder="输入邮箱"/>
+			</div>
+      <button @click = "Switching">切换</button>
+      
+      <!-- 数组中的响应式 -->
+      <div>
+				<p>
+					
+				</p>
+			</div>
+	</div>
+	</body>
+	<script>
+		let vue = new Vue({
+		el:"#app",
+		data:{
+			
+			title:['helo','hh','hhh'],
+			status:{
+				yes: false,
+			},
+			isShow: true
+		},
+		methods:{
+			change:function(index){
+				console.log(index);
+				// if(index == 1){
+				// 	this.status.yes = true;
+				// }else{
+				// 	this.status.yes = false;
+				// }
+				// console.log(this.status.yes);
+			},
+			Switching(){
+				this.isShow = !this.isShow;
+			}
+		}
+	})
+	</script>
+	
+</html>

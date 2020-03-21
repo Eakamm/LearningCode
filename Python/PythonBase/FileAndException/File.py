@@ -1,18 +1,19 @@
 '''
 @Author: your name
 @Date: 2020-01-11 17:27:56
-@LastEditTime : 2020-01-15 00:03:10
-@LastEditors  : Please set LastEditors
+@LastEditTime: 2020-02-18 14:26:50
+@LastEditors: Please set LastEditors
 @Description: In User Settings Edit:
 @FilePath: \PythonPersonal\PythonBase\FileAndException\File.py
 '''
 # 打开文件读取返回字符串
 # with open('PythonBase/FileAndException/Need_File/pi_digits.txt') as file_object:
-#     lines = file_object.read()
+#     lines = file_object.read()12
 #     print(lines.rstrip())
 
 # 打开文件按行读取
-# with open('PythonBase/FileAndException/Need_File/pi_million_digits.txt') as file_object:
+# with open('PythonBase/FileAndException/Need_File/pi_million_digits.txt'
+#           ) as file_object:
 #     lines = file_object.readlines()
 # content = ""
 # my_birthday = input("Your Birthday:")
@@ -126,32 +127,43 @@
 # print(numbers)
 
 # 异常
-import unittest
-from sums import sums
-from survey import AnonymousSurvey
+# import unittest
+# from sums import sums
+# from survey import AnonymousSurvey
 
+# class SumTestCase(unittest.TestCase):
+#     def setUp(self):
+#         question = 'what?'
+#         self.mysurvey = AnonymousSurvey(question)
+#         self.responses = ['a', 'b', 'c']
 
-class SumTestCase(unittest.TestCase):
-    def setUp(self):
-        question = 'what?'
-        self.mysurvey = AnonymousSurvey(question)
-        self.responses = ['a', 'b', 'c']
+#     def test_sum(self):
+#         result = sums(1, 2)
+#         self.assertEqual(str(result), '3')
 
-    def test_sum(self):
-        result = sums(1, 2)
-        self.assertEqual(str(result), '3')
+#     def test_store_single(self):
+#         self.mysurvey.store_response(self.responses[0])
+#         self.assertIn(self.mysurvey.responses[0], self.responses)
 
-    def test_store_single(self):
-        self.mysurvey.store_response(self.responses[0])
-        self.assertIn(self.mysurvey.responses[0], self.responses)
+#     def test_store_three(self):
+#         for response in self.responses:
+#             self.mysurvey.store_response(response)
+#         for response in self.mysurvey.responses:
+#             self.assertIn(response, self.responses)
 
-    def test_store_three(self):
-        for response in self.responses:
-            self.mysurvey.store_response(response)
-        for response in self.mysurvey.responses:
-            self.assertIn(response, self.responses)
-
-
-unittest.main()
+# unittest.main()
 
 # setup()
+
+import re
+
+str = 'Python'
+try:
+    matchObj = re.match(r'[P]\S+', str)
+    if matchObj:
+        print(matchObj.group())
+except AttributeError:
+    print('continue')
+
+matchObj = re.match(r'[y]\S+', str)
+print(matchObj.group())

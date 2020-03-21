@@ -2,7 +2,7 @@
 @Author: your name
 @Date: 2020-02-11 11:23:14
 @LastEditTime : 2020-02-11 23:46:27
-@LastEditors  : Please set LastEditors
+@LastEditors: Please set LastEditors
 @Description: In User Settings Edit
 @FilePath: \Python\爬虫\BeautifulSoup4\Base.py
 '''
@@ -35,6 +35,8 @@ print(type(tag.attrs))
 
 print("按照字典的方式获取其中的元素：")
 print(tag.attrs['class'])
+print('获取class属性的值')
+print(tag['class'])
 print()
 
 # 获取标签的字符串

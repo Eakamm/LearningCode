@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- 写在组件标签内的内容 -->
+    <cpn>
+      <template #normal-slot>
+        <p>不好意思普通插槽！</p>
+      </template>
+       
+      <!-- 作用域插槽展示作用域范围 父级的isShow为false，所以该插槽不显示,显示插槽默认值 -->
+      <p slot="scope-slot" v-if="isShow">不好意思作用域插槽！</p>
+    </cpn>
+    
+  </div>
+
+  <template id="test">
+    <div>
+      <h1>Hello!</h1>
+      <!-- 定义一个插槽，默认显示开始写好在模板中的数据 -->
+      <slot name = "normal-slot">你好普通插槽！</slot>
+
+      <!-- 作用域插槽 -->
+      <slot name = "scope-slot">
+        <p>你好作用域插槽！1</p>
+      </slot>
+      <!-- 子作用域的isShow为true 显示-->
+      <slot v-if="isShow">你好作用域插槽！2</slot>
+    </div>
+  </template>
+  <script>
+    const cpn = {
+      template: "#test",
+      data(){
+        return {
+          isShow: true
+        }
+      }
+    }
+    let vm=new Vue({
+      el:'#app',
+      data:{
+        isShow: false
+      },
+      methods:{
+
+      },
+      components:{
+        cpn
+      }
+    });
+  </script>
+</body>
+</html>

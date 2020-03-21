@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1 v-for="n in nums">
+          {{n}}
+        </h1>
+        <button @click="get">处理</button>
+        <h1>{{result}}</h1>
+    </div>
+    <script>
+        let vm=new Vue({
+          el:'#app',
+          data:{
+            nums: [100,111,21,21,12,152],
+            result: 0
+          },
+          methods:{
+            get(){
+              //1、filter
+              //传入参数为n，即数组中的每个元素，相当于遍历
+              // let newNums = this.nums.filter(function(n){
+              //   return n<100;
+              // })
+              // console.log(newNums);
+//               * 传入参数n，即数组中的每个元素，相当于自动遍历数组，将该返回值替换原来的元素
+//              * 返回值：替换后的数组
+              // let newNums2 = newNums.map(function(n){
+              //   return n*2;
+              // })
+              // console.log(newNums2);
+//               传入参数（previousValue，n），previousVlaue为上一个元素，n为当前元素，函数计算结果作为下一次函数的previousValue值。（初始previousValue值可以在reduce中设置）
+//              * 返回值：汇总结果
+              // let newNums3 = newNums2.reduce(function(proviousValue, n){
+              //   return proviousValue+n;
+              // },0)
+              // console.log(newNums3);
+              // this.nums = newNums2;
+
+              //箭头函数
+              let newNums3 = this.nums.filter(n => n < 100).map(n => n*2).reduce((proviousValue, n) => proviousValue+n,0);
+              this.result = newNums3;
+            }
+          }
+        });
+    </script>
+</body>
+</html>

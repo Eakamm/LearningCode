@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>haha</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<style>
+			.active{
+				color: #00FFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<!-- <ul>
+				<li></li>
+			</ul> -->
+			<!-- status:{
+				(key)     (value)
+				yes:        false,
+			} -->
+			<p v-for="(value, key) in status" v-show="value">{{key}}</p>
+			<button @click="change(1)"></button>
+			<button @click="change(2)"></button>
+		</div>
+	</body>
+	<script>
+		let vue = new Vue({
+		el:"#app",
+		data:{
+			
+			title:['helo','hh','hhh'],
+			status:{
+				yes: false,
+			}
+		},
+		methods:{
+			change:function(index){
+				if(index == 1){
+					this.status.yes = true;
+				}else{
+					this.status.yes = false;
+				}
+				console.log(this.status.yes);
+			}
+		}
+	})
+	</script>
+	
+</html>

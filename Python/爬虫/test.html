@@ -1350,7 +1350,7 @@ $Nav.declare('img.pixel', 'https://images-cn.ssl-images-amazon.com/images/G/28/x
 </script>
 <img src="https://images-cn.ssl-images-amazon.com/images/G/28/gno/sprites/global-sprite-32-v1._CB476259932_.png" style="display:none" alt=""/>
 <!--[if IE 6]>
-<style type="text/css"><!--
+<style type="text/SelectCss.py"><!--
   #navbar.nav-sprite-v3 .nav-sprite {
     background-image: url(https://images-cn.ssl-images-amazon.com/images/G/28/gno/sprites/global-sprite-v1._CB330175697_.png);
   }
@@ -5497,311 +5497,616 @@ P.when('A', 'ags-subnav', 'ready').execute(function (a, agsSubnav) {
 
 
      
-     
-
-
-
-    
-        
-        
-        
-            
-
-
-
-<style type="text/css">
-#bbop-sbbop-container {
-  margin-bottom: 0px;
-}
-</style>
-
-
-<div id="bbop-sbbop-container" class="a-section">
-    
-    <div id="sbbop-popover-header" class="a-section a-hidden">
-        <div class="a-box a-alert-inline a-alert-inline-success">
-            <div class="a-box-inner a-alert-container">
-                <i class="a-icon a-icon-alert"></i>
-                <div class="a-color-base">
-                    飞利浦 lumea Prestige IPL *去...
-                    已加入购物车
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script type="text/javascript">
-
-
-if( window.P ){
-    P.when("A", "jQuery").execute(function(A, $) {
-
-        
-        var bbopData = {
-            "interstitialEnabled":"",
-            "bbopEnabled":"true",
-            "sbbopEnabled":"true",
-            "productAsin":"B01N32HKQA",
-            "productMerchantID":"A3CQWPW49OI3BQ",
-            "bbopRuleID":"Acquisition_AddToCart_PrimeBasicFreeTrialUpsellEligible",
-            "bbopPreorder":"false",
-            "bbopReleaseDateDeliveryEligibility":"false",
-            "bbopDeliveryOptions":"[expd-intl-eu-cn-ag,std-intl-eu-cn-ag]",
-            "deliveryCountryCode":"",
-            "sbbopRuleID":"Acquisition_AddToCart_PrimeBasicFreeTrialUpsellEligible",
-            "sbbopEventID":"106",
-            "sbbopMetricsScope":"surpriseBBOP",
-        };
-
-        
-        var emptyBbopContainer = $('#bbop-sbbop-container').html();
-
-        
-        var addToCartButtonName = $('#add-to-cart-button').attr('name');
-
-        var isTrue = function(strBoolean) {
-            return strBoolean === "true";
-        }
-
-        
-
-        function getQueryParameterByName(name) {
-            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-
-            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-                results = regex.exec(location.search);
-
-            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-        }
-
-        
-        var hidden, visibilityChange;
-        if (typeof document.hidden !== "undefined") { 
-            hidden = "hidden";
-            visibilityChange = "visibilitychange";
-        } else if (typeof document.mozHidden !== "undefined") {
-            hidden = "mozHidden";
-            visibilityChange = "mozvisibilitychange";
-        } else if (typeof document.msHidden !== "undefined") {
-            hidden = "msHidden";
-            visibilityChange = "msvisibilitychange";
-        } else if (typeof document.webkitHidden !== "undefined") {
-            hidden = "webkitHidden";
-            visibilityChange = "webkitvisibilitychange";
-        }
-
-        
-        
-        var loadFeatures = function(featureData) {
-            if(!featureData || !isTrue(featureData["bbopEnabled"])) {
-                return;
-            }
-            
-            var $container = $("#bbop-sbbop-container");
-
-            var data = {
-                "ASIN" : featureData["productAsin"],
-                "merchantID" : featureData["productMerchantID"],
-                "bbopruleID" : featureData["bbopRuleID"],
-                "sbbopruleID" : featureData["sbbopRuleID"],
-                "deliveryOptions" : featureData["bbopDeliveryOptions"],
-                "preorder" : featureData["bbopPreorder"],
-                "releaseDateDeliveryEligible" : featureData["bbopReleaseDateDeliveryEligibility"],
-                "deliveryCountryCode" : featureData["deliveryCountryCode"],
-            };
-            var scope = "bbopAjaxCall";
-            if(typeof uet === 'function') {
-                uet('bb', scope, {wb: 1});
-            }
-            
-            $.get("/gp/product/du/bbop-ms3-ajax-endpoint.html", data, function(result) {
-                
-                    
-                    
-                        $container.append(result);
-                    
-                
-                if(typeof uet === 'function' && typeof uex === 'function') {
-                    
-                    uet( "cf", scope, {wb: 1} );
-                    uex( "ld", scope, {wb: 1} );
-                }
-
-                if (isTrue(getQueryParameterByName("checkBBOP"))) {
-                    P.when("a-modal", "ready").execute(function(modal) {
-                      $('#bbop-check-box').click();
-                    });
-                }
-
-                
-                if((isTrue(featureData["sbbopEnabled"])) && (document.getElementById("smartShelfSecondaryPanel_feature_div") == null) ) {
-                    loadSBBOP(featureData);
-                }
-            });
-
-            var loadSBBOP = function(sbbopData) {
-                if (window.sbbopLoaded === undefined) {
-                    window.sbbopLoaded = false;
-                }
-
-                P.when("a-modal", "ready").execute(function(modal) {
-                    if(!window.sbbopLoaded){
-                        var sbbop_modal = createModal(modal);
-
-                        if (sbbop_modal !== undefined) {
-                            $(document.body).delegate('#add-to-cart-button','click.sbbop', function(event){
-                                $(document.body).undelegate('#add-to-cart-button','click.sbbop');
-
-                                var $sbbop = $("#sbbop-container"),
-                                    $sbbopContent = $sbbop.find("#sbbop-popover-content"),
-                                    $sbbopHeader = $container.find("#sbbop-popover-header"),
-                                    $sbbopFooter = $sbbop.find("#sbbop-popover-footer"),
-                                    isAsinizationCase = $sbbop.find(".is-sbbop-asinization-usecase").length > 0,
-                                    $bbopCheckbox = $('#bbop-check-box'),
-                                    $atcButton = $('#add-to-cart-button'),
-                                    atcName = $atcButton.attr("name"),
-                                    hasSingleYesButton = ($('#sbbop-yes-button').length === 1),
-                                    hasSingleNoButton  = ($('#sbbop-no-button').length === 1),
-                                    validAtcButton = ($atcButton.length === 1 && atcName != "submit.add-to-cart-prime-buy-box.x"),
-                                    validSbbopContent = ($sbbopContent.length === 1 && $sbbopHeader.length === 1 && $sbbopFooter.length === 1),
-                                    validSbbopButtons = (hasSingleYesButton && hasSingleNoButton),
-                                    bbopIsNotChecked = !$bbopCheckbox.is(":checked");
-
-                                if (validAtcButton && validSbbopContent && validSbbopButtons && bbopIsNotChecked) {
-                                    $atcButton.bind('click.sbbop', function(){return false;});  
-                                    var metricsScope = sbbopData["sbbopMetricsScope"];
-                                    $(document.body).delegate("#sbbop-yes-button", "click", function(event){
-                                        if(isAsinizationCase){
-                                            $bbopCheckbox.prop("checked",true);
-                                            logMetric("CSM_prime_surprise_BBOP_yes_button_HO", metricsScope);
-                                        }
-                                        else {
-                                            $atcButton.attr("name", "submit.add-to-cart-prime-buy-box.x");
-                                            logMetric("CSM_prime_surprise_BBOP_yes_button", metricsScope);
-                                        }
-                                        safeATCClick(metricsScope);
-                                    });
-
-                                    $(document.body).delegate("#sbbop-no-button", "click", function(event){
-                                        if(isAsinizationCase) {
-                                            logMetric("CSM_prime_surprise_BBOP_no_button_HO", metricsScope);
-                                        }
-                                        else {
-                                            logMetric("CSM_prime_surprise_BBOP_no_button", metricsScope);
-                                        }
-                                        safeATCClick(metricsScope);
-                                    });
-
-                                    
-                                    $(document.body).delegate(".a-popover", "keydown", function(event){
-                                        if(event.keyCode == "27"){
-                                            event.preventDefault();
-                                        }
-                                    });
-
-                                    A.on("a:popover:ajaxFail:sbbop_modal", function(){
-                                        safeATCClick(metricsScope);
-                                    });
-                                    A.on("a:popover:hide:sbbop_modal", function(){
-                                        if(isAsinizationCase) {
-                                            logMetric("CSM_prime_surprise_BBOP_close_button_HO", metricsScope);
-                                        }
-                                        else {
-                                            logMetric("CSM_prime_surprise_BBOP_close_button", metricsScope);
-                                        }
-                                        safeATCClick(metricsScope);
-                                    });
-                                    A.on("a:popover:beforeShow:sbbop_modal", function(){
-                                        setEventEmbu(sbbopData["sbbopEventID"]);
-                                    });
-
-                                    sbbop_modal.show();
-                                    if(isAsinizationCase) {
-                                        logMetric("CSM_prime_surprise_BBOP_presentation_HO", metricsScope);
-                                    }
-                                    else {
-                                        logMetric("CSM_prime_surprise_BBOP_presentation", metricsScope);
-                                    }
-                                    return false;
-                                }
-                            });
-                        }
-                        window.sbbopLoaded = true;
-                    }
-                });
-            };
-
-            var createModal = function(modal) {
-                var $sbbop = $("#sbbop-container"),
-                    $sbbopContent = $sbbop.find("#sbbop-popover-content"),
-                    $sbbopHeader = $container.find("#sbbop-popover-header"),
-                    $sbbopFooter = $sbbop.find("#sbbop-popover-footer");
-
-                if($sbbopContent.length === 1 && $sbbopHeader.length === 1 && $sbbopFooter.length === 1){
-                    sbbopWidth = parseInt(($sbbop.find("#sbbop-popover")).attr("popover-width"), 10);
-
-                    return modal.create($sbbop, {
-                        "inlineContent": $sbbopContent.html(),
-                        "header": $sbbopHeader.html(),
-                        "footer": $sbbopFooter.html(),
-                        "width": sbbopWidth,
-                        "activate": "onclick",
-                        "name": "sbbop_modal"
-                    });
-                }
-                return undefined;
-            }
-
-            var logMetric = function(customTag, metricsScop){
-                if(window.ue && ue.tag) {
-                    ue.tag(customTag, metricsScop);
-                }
-            };
-
-            var postBackMetrics = function(metricsScope){
-                if (window.ue){
-                    uex("ld", metricsScope);
-                }
-            };
-
-            var setEventEmbu = function(eventId){
-                var eventData = { "eventCode" : eventId };
-                $.get("/gp/prime/utility/record-embu-event.html", eventData);
-            };
-
-            var safeATCClick = function(metricsScope) {
-                postBackMetrics(metricsScope);                     
-                $('#add-to-cart-button').unbind('click.sbbop')     
-                    .click()                                       
-                    .bind('click.sbbop',function(){return false}); 
-            };
-        }
-
-        
-        var handleVisibilityChange = function() {
-            if (!document[hidden]) {
-                
-                document.removeEventListener(visibilityChange, handleVisibilityChange);
-                loadFeatures(bbopData);
-            }
-        }
-
-        if (typeof document.addEventListener === "undefined" ||
-            typeof document[hidden] === "undefined" || !document[hidden]) {
-            
-            loadFeatures(bbopData);
-        } else {
-            
-            document.addEventListener(visibilityChange, handleVisibilityChange);
-        }
-    });
-}
-</script>
-
-        
-    
-
+     
+
+
+
+
+
+
+
+    
+
+        
+
+        
+
+        
+
+            
+
+
+
+
+
+
+
+<style type="text/css">
+
+#bbop-sbbop-container {
+
+  margin-bottom: 0px;
+
+}
+
+</style>
+
+
+
+
+
+<div id="bbop-sbbop-container" class="a-section">
+
+    
+
+    <div id="sbbop-popover-header" class="a-section a-hidden">
+
+        <div class="a-box a-alert-inline a-alert-inline-success">
+
+            <div class="a-box-inner a-alert-container">
+
+                <i class="a-icon a-icon-alert"></i>
+
+                <div class="a-color-base">
+
+                    飞利浦 lumea Prestige IPL *去...
+
+                    已加入购物车
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+
+
+
+
+if( window.P ){
+
+    P.when("A", "jQuery").execute(function(A, $) {
+
+
+
+        
+
+        var bbopData = {
+
+            "interstitialEnabled":"",
+
+            "bbopEnabled":"true",
+
+            "sbbopEnabled":"true",
+
+            "productAsin":"B01N32HKQA",
+
+            "productMerchantID":"A3CQWPW49OI3BQ",
+
+            "bbopRuleID":"Acquisition_AddToCart_PrimeBasicFreeTrialUpsellEligible",
+
+            "bbopPreorder":"false",
+
+            "bbopReleaseDateDeliveryEligibility":"false",
+
+            "bbopDeliveryOptions":"[expd-intl-eu-cn-ag,std-intl-eu-cn-ag]",
+
+            "deliveryCountryCode":"",
+
+            "sbbopRuleID":"Acquisition_AddToCart_PrimeBasicFreeTrialUpsellEligible",
+
+            "sbbopEventID":"106",
+
+            "sbbopMetricsScope":"surpriseBBOP",
+
+        };
+
+
+
+        
+
+        var emptyBbopContainer = $('#bbop-sbbop-container').html();
+
+
+
+        
+
+        var addToCartButtonName = $('#add-to-cart-button').attr('name');
+
+
+
+        var isTrue = function(strBoolean) {
+
+            return strBoolean === "true";
+
+        }
+
+
+
+        
+
+
+
+        function getQueryParameterByName(name) {
+
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+
+
+
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+
+                results = regex.exec(location.search);
+
+
+
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+
+        }
+
+
+
+        
+
+        var hidden, visibilityChange;
+
+        if (typeof document.hidden !== "undefined") { 
+
+            hidden = "hidden";
+
+            visibilityChange = "visibilitychange";
+
+        } else if (typeof document.mozHidden !== "undefined") {
+
+            hidden = "mozHidden";
+
+            visibilityChange = "mozvisibilitychange";
+
+        } else if (typeof document.msHidden !== "undefined") {
+
+            hidden = "msHidden";
+
+            visibilityChange = "msvisibilitychange";
+
+        } else if (typeof document.webkitHidden !== "undefined") {
+
+            hidden = "webkitHidden";
+
+            visibilityChange = "webkitvisibilitychange";
+
+        }
+
+
+
+        
+
+        
+
+        var loadFeatures = function(featureData) {
+
+            if(!featureData || !isTrue(featureData["bbopEnabled"])) {
+
+                return;
+
+            }
+
+            
+
+            var $container = $("#bbop-sbbop-container");
+
+
+
+            var data = {
+
+                "ASIN" : featureData["productAsin"],
+
+                "merchantID" : featureData["productMerchantID"],
+
+                "bbopruleID" : featureData["bbopRuleID"],
+
+                "sbbopruleID" : featureData["sbbopRuleID"],
+
+                "deliveryOptions" : featureData["bbopDeliveryOptions"],
+
+                "preorder" : featureData["bbopPreorder"],
+
+                "releaseDateDeliveryEligible" : featureData["bbopReleaseDateDeliveryEligibility"],
+
+                "deliveryCountryCode" : featureData["deliveryCountryCode"],
+
+            };
+
+            var scope = "bbopAjaxCall";
+
+            if(typeof uet === 'function') {
+
+                uet('bb', scope, {wb: 1});
+
+            }
+
+            
+
+            $.get("/gp/product/du/bbop-ms3-ajax-endpoint.html", data, function(result) {
+
+                
+
+                    
+
+                    
+
+                        $container.append(result);
+
+                    
+
+                
+
+                if(typeof uet === 'function' && typeof uex === 'function') {
+
+                    
+
+                    uet( "cf", scope, {wb: 1} );
+
+                    uex( "ld", scope, {wb: 1} );
+
+                }
+
+
+
+                if (isTrue(getQueryParameterByName("checkBBOP"))) {
+
+                    P.when("a-modal", "ready").execute(function(modal) {
+
+                      $('#bbop-check-box').click();
+
+                    });
+
+                }
+
+
+
+                
+
+                if((isTrue(featureData["sbbopEnabled"])) && (document.getElementById("smartShelfSecondaryPanel_feature_div") == null) ) {
+
+                    loadSBBOP(featureData);
+
+                }
+
+            });
+
+
+
+            var loadSBBOP = function(sbbopData) {
+
+                if (window.sbbopLoaded === undefined) {
+
+                    window.sbbopLoaded = false;
+
+                }
+
+
+
+                P.when("a-modal", "ready").execute(function(modal) {
+
+                    if(!window.sbbopLoaded){
+
+                        var sbbop_modal = createModal(modal);
+
+
+
+                        if (sbbop_modal !== undefined) {
+
+                            $(document.body).delegate('#add-to-cart-button','click.sbbop', function(event){
+
+                                $(document.body).undelegate('#add-to-cart-button','click.sbbop');
+
+
+
+                                var $sbbop = $("#sbbop-container"),
+
+                                    $sbbopContent = $sbbop.find("#sbbop-popover-content"),
+
+                                    $sbbopHeader = $container.find("#sbbop-popover-header"),
+
+                                    $sbbopFooter = $sbbop.find("#sbbop-popover-footer"),
+
+                                    isAsinizationCase = $sbbop.find(".is-sbbop-asinization-usecase").length > 0,
+
+                                    $bbopCheckbox = $('#bbop-check-box'),
+
+                                    $atcButton = $('#add-to-cart-button'),
+
+                                    atcName = $atcButton.attr("name"),
+
+                                    hasSingleYesButton = ($('#sbbop-yes-button').length === 1),
+
+                                    hasSingleNoButton  = ($('#sbbop-no-button').length === 1),
+
+                                    validAtcButton = ($atcButton.length === 1 && atcName != "submit.add-to-cart-prime-buy-box.x"),
+
+                                    validSbbopContent = ($sbbopContent.length === 1 && $sbbopHeader.length === 1 && $sbbopFooter.length === 1),
+
+                                    validSbbopButtons = (hasSingleYesButton && hasSingleNoButton),
+
+                                    bbopIsNotChecked = !$bbopCheckbox.is(":checked");
+
+
+
+                                if (validAtcButton && validSbbopContent && validSbbopButtons && bbopIsNotChecked) {
+
+                                    $atcButton.bind('click.sbbop', function(){return false;});  
+
+                                    var metricsScope = sbbopData["sbbopMetricsScope"];
+
+                                    $(document.body).delegate("#sbbop-yes-button", "click", function(event){
+
+                                        if(isAsinizationCase){
+
+                                            $bbopCheckbox.prop("checked",true);
+
+                                            logMetric("CSM_prime_surprise_BBOP_yes_button_HO", metricsScope);
+
+                                        }
+
+                                        else {
+
+                                            $atcButton.attr("name", "submit.add-to-cart-prime-buy-box.x");
+
+                                            logMetric("CSM_prime_surprise_BBOP_yes_button", metricsScope);
+
+                                        }
+
+                                        safeATCClick(metricsScope);
+
+                                    });
+
+
+
+                                    $(document.body).delegate("#sbbop-no-button", "click", function(event){
+
+                                        if(isAsinizationCase) {
+
+                                            logMetric("CSM_prime_surprise_BBOP_no_button_HO", metricsScope);
+
+                                        }
+
+                                        else {
+
+                                            logMetric("CSM_prime_surprise_BBOP_no_button", metricsScope);
+
+                                        }
+
+                                        safeATCClick(metricsScope);
+
+                                    });
+
+
+
+                                    
+
+                                    $(document.body).delegate(".a-popover", "keydown", function(event){
+
+                                        if(event.keyCode == "27"){
+
+                                            event.preventDefault();
+
+                                        }
+
+                                    });
+
+
+
+                                    A.on("a:popover:ajaxFail:sbbop_modal", function(){
+
+                                        safeATCClick(metricsScope);
+
+                                    });
+
+                                    A.on("a:popover:hide:sbbop_modal", function(){
+
+                                        if(isAsinizationCase) {
+
+                                            logMetric("CSM_prime_surprise_BBOP_close_button_HO", metricsScope);
+
+                                        }
+
+                                        else {
+
+                                            logMetric("CSM_prime_surprise_BBOP_close_button", metricsScope);
+
+                                        }
+
+                                        safeATCClick(metricsScope);
+
+                                    });
+
+                                    A.on("a:popover:beforeShow:sbbop_modal", function(){
+
+                                        setEventEmbu(sbbopData["sbbopEventID"]);
+
+                                    });
+
+
+
+                                    sbbop_modal.show();
+
+                                    if(isAsinizationCase) {
+
+                                        logMetric("CSM_prime_surprise_BBOP_presentation_HO", metricsScope);
+
+                                    }
+
+                                    else {
+
+                                        logMetric("CSM_prime_surprise_BBOP_presentation", metricsScope);
+
+                                    }
+
+                                    return false;
+
+                                }
+
+                            });
+
+                        }
+
+                        window.sbbopLoaded = true;
+
+                    }
+
+                });
+
+            };
+
+
+
+            var createModal = function(modal) {
+
+                var $sbbop = $("#sbbop-container"),
+
+                    $sbbopContent = $sbbop.find("#sbbop-popover-content"),
+
+                    $sbbopHeader = $container.find("#sbbop-popover-header"),
+
+                    $sbbopFooter = $sbbop.find("#sbbop-popover-footer");
+
+
+
+                if($sbbopContent.length === 1 && $sbbopHeader.length === 1 && $sbbopFooter.length === 1){
+
+                    sbbopWidth = parseInt(($sbbop.find("#sbbop-popover")).attr("popover-width"), 10);
+
+
+
+                    return modal.create($sbbop, {
+
+                        "inlineContent": $sbbopContent.html(),
+
+                        "header": $sbbopHeader.html(),
+
+                        "footer": $sbbopFooter.html(),
+
+                        "width": sbbopWidth,
+
+                        "activate": "onclick",
+
+                        "name": "sbbop_modal"
+
+                    });
+
+                }
+
+                return undefined;
+
+            }
+
+
+
+            var logMetric = function(customTag, metricsScop){
+
+                if(window.ue && ue.tag) {
+
+                    ue.tag(customTag, metricsScop);
+
+                }
+
+            };
+
+
+
+            var postBackMetrics = function(metricsScope){
+
+                if (window.ue){
+
+                    uex("ld", metricsScope);
+
+                }
+
+            };
+
+
+
+            var setEventEmbu = function(eventId){
+
+                var eventData = { "eventCode" : eventId };
+
+                $.get("/gp/prime/utility/record-embu-event.html", eventData);
+
+            };
+
+
+
+            var safeATCClick = function(metricsScope) {
+
+                postBackMetrics(metricsScope);                     
+
+                $('#add-to-cart-button').unbind('click.sbbop')     
+
+                    .click()                                       
+
+                    .bind('click.sbbop',function(){return false}); 
+
+            };
+
+        }
+
+
+
+        
+
+        var handleVisibilityChange = function() {
+
+            if (!document[hidden]) {
+
+                
+
+                document.removeEventListener(visibilityChange, handleVisibilityChange);
+
+                loadFeatures(bbopData);
+
+            }
+
+        }
+
+
+
+        if (typeof document.addEventListener === "undefined" ||
+
+            typeof document[hidden] === "undefined" || !document[hidden]) {
+
+            
+
+            loadFeatures(bbopData);
+
+        } else {
+
+            
+
+            document.addEventListener(visibilityChange, handleVisibilityChange);
+
+        }
+
+    });
+
+}
+
+</script>
+
+
+
+        
+
+    
+
+
+
 
 
 	                
@@ -18438,7 +18743,7 @@ return data;
     .aplus-v2 .aplus-module:last-child{border-bottom:none}
     .aplus-v2 .aplus-module {min-width:979px;}
 
-    /* aplus css needed to override aui on the detail page */
+    /* aplus SelectCss.py needed to override aui on the detail page */
     .aplus-v2 .aplus-module table.aplus-chart.a-bordered.a-vertical-stripes {border:none;}
     .aplus-v2 .aplus-module table.aplus-chart.a-bordered.a-vertical-stripes td {background:none;}
     .aplus-v2 .aplus-module table.aplus-chart.a-bordered.a-vertical-stripes td.selected {background-color:#ffd;}
@@ -20835,7 +21140,7 @@ function pdToggleSections(a, expand){
 .js-feature-refresh-overlay{opacity:.5;pointer-events:none}
 /*! jQuery UI - v1.10.3 - 2013-05-03
 * http://jqueryui.com
-* Includes: jquery.ui.core.css, jquery.ui.accordion.css, jquery.ui.autocomplete.css, jquery.ui.button.css, jquery.ui.datepicker.css, jquery.ui.dialog.css, jquery.ui.menu.css, jquery.ui.progressbar.css, jquery.ui.resizable.css, jquery.ui.selectable.css, jquery.ui.slider.css, jquery.ui.spinner.css, jquery.ui.tabs.css, jquery.ui.tooltip.css
+* Includes: jquery.ui.core.SelectCss.py, jquery.ui.accordion.SelectCss.py, jquery.ui.autocomplete.SelectCss.py, jquery.ui.button.SelectCss.py, jquery.ui.datepicker.SelectCss.py, jquery.ui.dialog.SelectCss.py, jquery.ui.menu.SelectCss.py, jquery.ui.progressbar.SelectCss.py, jquery.ui.resizable.SelectCss.py, jquery.ui.selectable.SelectCss.py, jquery.ui.slider.SelectCss.py, jquery.ui.spinner.SelectCss.py, jquery.ui.tabs.SelectCss.py, jquery.ui.tooltip.SelectCss.py
 * To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Trebuchet%20MS%2CTahoma%2CVerdana%2CArial%2Csans-serif&fwDefault=bold&fsDefault=1.1em&cornerRadius=4px&bgColorHeader=f6a828&bgTextureHeader=gloss_wave&bgImgOpacityHeader=35&borderColorHeader=e78f08&fcHeader=ffffff&iconColorHeader=ffffff&bgColorContent=eeeeee&bgTextureContent=highlight_soft&bgImgOpacityContent=100&borderColorContent=dddddd&fcContent=333333&iconColorContent=222222&bgColorDefault=f6f6f6&bgTextureDefault=glass&bgImgOpacityDefault=100&borderColorDefault=cccccc&fcDefault=1c94c4&iconColorDefault=ef8c08&bgColorHover=fdf5ce&bgTextureHover=glass&bgImgOpacityHover=100&borderColorHover=fbcb09&fcHover=c77405&iconColorHover=ef8c08&bgColorActive=ffffff&bgTextureActive=glass&bgImgOpacityActive=65&borderColorActive=fbd850&fcActive=eb8f00&iconColorActive=ef8c08&bgColorHighlight=ffe45c&bgTextureHighlight=highlight_soft&bgImgOpacityHighlight=75&borderColorHighlight=fed22f&fcHighlight=363636&iconColorHighlight=228ef1&bgColorError=b81900&bgTextureError=diagonals_thick&bgImgOpacityError=18&borderColorError=cd0a0a&fcError=ffffff&iconColorError=ffd27a&bgColorOverlay=666666&bgTextureOverlay=diagonals_thick&bgImgOpacityOverlay=20&opacityOverlay=50&bgColorShadow=000000&bgTextureShadow=flat&bgImgOpacityShadow=10&opacityShadow=20&thicknessShadow=5px&offsetTopShadow=-5px&offsetLeftShadow=-5px&cornerRadiusShadow=5px
 * Copyright 2013 jQuery Foundation and other contributors Licensed MIT */.ask-autocomplete{position:relative;top:0;left:0;cursor:default}.ask-autocomplete-menu{list-style:none;padding:0;margin:0;display:block;outline:0;border-radius:.3rem;position:relative}.ask-autocomplete-menu .ask-autocomplete-menu-item{margin:0;padding:0;width:100%;list-style:none}.ask-autocomplete-menu .ask-autocomplete-menu-item a{text-decoration:none;display:block;padding:1px 10px;line-height:2;min-height:0;font-weight:400}.ask-autocomplete-menu .ask-autocomplete-menu-item a.ask-autocomplete-state-active,.ask-autocomplete-menu .ask-autocomplete-menu-item a.ask-autocomplete-state-focus{font-weight:400;margin:0;background:#eee}.ask-autocomplete-menu-item-first{padding-top:10px!important}.ask-autocomplete-menu-item-last{padding-bottom:10px!important}.ask-autocomplete-menu .ask-state-disabled{font-weight:400;line-height:1.5}.ask-autocomplete-menu .ask-state-disabled a{cursor:default}.ask-autocomplete-widget{font-family:'Amazon Ember';font-size:1.1em}.ask-autocomplete-widget .ask-autocomplete-widget{font-size:1em}.ask-autocomplete-widget input,.ask-autocomplete-widget select,.ask-autocomplete-widget-content{border:1px solid #ddd;color:#333}.ask-autocomplete-widget-content a{color:#333}.ask-autocomplete-state-active a{color:#eb8f00;text-decoration:none}
 .askPage .askWrapText{word-wrap:break-word}.askHidden{display:none}a.ask-btf-search-link span{position:relative;top:-3px}.askLanguageFilterLabel{padding-right:6px}.a-icon-search.ask-btf-search-button-icon,.a-icon-search.ask-swdp-search-button-icon{vertical-align:middle}.askSearchInputIngress{position:relative}.askPage .a-link-normal{display:inline-block}.askFormLabel{padding-left:0!important}.askFormLabel label.a-native-dropdown{direction:ltr}.askTranslationFooterSeparator,.askTranslationFooterText{padding-right:5px}.askBtfSearchResultsContainer .askBtfSearchResults .matches,.askDPSearchPrimaryViewContent .matches,.askDPSearchSecondaryViewContent .askSearchResults .matches,.askLiveSearchResults .matches,.askSearchResultsContainer .askSearchResults .matches{font-weight:700;background-color:#ffcc7f}.askLiveSearchFailureMessage,.askLiveSearchLoading,.askLiveSearchSuccessfulMessage{display:none}.askExpanderContainer .askLongText{display:none}.askExpanderContainer .askShortText{display:inline}.askExpanderContainer .askSeeLess,.askExpanderContainer .askSeeMore{text-decoration:none}.askExpanderContainer.askExpanderExpanded .askLongText{display:inline}.askExpanderContainer.askExpanderExpanded .askShortText{display:none}.askAuthorBadge{border-top:1px dashed #A9A9A9;border-bottom:1px dashed #A9A9A9;font-size:9px;text-transform:uppercase;color:#004B91;letter-spacing:.5px;padding:2px;font-weight:700;white-space:nowrap}a.askAuthorBadge:link{text-decoration:none}.askNewAuthorBadge{padding-left:2px;color:purple;white-space:nowrap}a.askNewAuthorBadge:active,a.askNewAuthorBadge:link,a.askNewAuthorBadge:visited{text-decoration:none;color:purple}.askEnthusiastBadge{color:#538000}.askAnswerMoreQuestionsPostAnswerFormSection{position:relative}.askAnswerMoreQuestionsConfirmation{display:none;left:50%;top:50%;max-width:50%;position:absolute;color:#FFF;padding:10px;border-color:#6C7778;background-color:#6C7778;border-style:solid;border-radius:6px;z-index:2;transform:translate(-50%,-50%)}.ask-profile-avatar-small .a-profile-avatar-wrapper{padding-right:6px!important;width:30px!important}.ask-profile-avatar-small .a-profile-avatar-wrapper .a-profile-avatar{height:24px!important;width:24px!important}.ask-profile-avatar-large .a-profile-avatar-wrapper{padding-right:6px!important;width:36px!important}.ask-profile-avatar-large .a-profile-avatar-wrapper .a-profile-avatar{height:30px!important;width:30px!important}.ask-profile-avatar-none .a-profile-avatar-wrapper{display:none}.ask-profile-avatar-none[data-a-type=enthusiast] .a-profile-avatar:after{display:none!important}.brandMessagingContainer{display:inline-flex;align-items:center}.brandMessagingContainer .brandMessagingIngressText{padding-left:8px}.brandMessagingIngressLink{padding-left:30px}.brandMessagingButtonOnlyWithQuestion{margin-left:175px}.brandMessagingButtonWithSeeMoreQuestion{margin-left:30px;vertical-align:middle}.askQuestionExamples{padding:0 0 40px 60px}.askTypicalExamples{color:#333;line-height:19px;font-size:13px;display:block}.askExampleQuestion{color:#666;padding-top:5px}.askQuestionForm .badQuestion,.askQuestionForm .emptyQuestion{display:none}.askQuestionForm.hasBadQuestion .badQuestion,.askQuestionForm.hasEmptyQuestion .emptyQuestion{display:inline;color:#990D03}.askDetailPageSearchSubmitQuestionButton{margin-left:14px}#ask-btf-container{font-family:"Amazon Ember",Verdana,Arial,Helvetica,sans-serif}.askInlineWidget{word-wrap:break-word}.askWidgetQuestions{max-width:1000px}.askBtfSearchViewContent{max-width:1000px;word-wrap:break-word;overflow:hidden}.askBtfSearchResultsHeader{cursor:pointer;display:inline-block;padding:20px;padding-bottom:8px;padding-top:14px}.askBtfSearchResultsHeaderActive{font-weight:700;border-bottom:3px solid #ffa700}.askBtfSearchFailureMessage,.askBtfSearchQuestionErrorContainer .askError,.askBtfSearchResults:not(.askBtfSearchResultsActive),.askBtfSearchSearchIndicator,.askBtfSearchTabHeaders{display:none}.askBtfSearchQuestionErrorContainer{margin-bottom:0}.askBtfDesktopSeeAllQuestionsButton{margin-left:175px}.a-icon-search.ask-btf-search-button-icon{margin-left:40px;margin-right:5px}.ask-btf-search-button-placeholder{margin-right:40px}.askInlineWidget .vote{border-right:1px solid #ddd;text-align:center;color:#000;padding:0;margin:0;width:65px}.askInlineWidget .vote .label{text-align:center;display:block}.askInlineWidget .vote form{margin-bottom:0!important}.askInlineWidget .vote li{list-style:none;padding:none;margin:none;text-indent:none}.askInlineWidget .vote .up input[type=submit]{vertical-align:top}.askInlineWidget .vote input[type=submit]{-webkit-background-size:100%;-moz-background-size:100%;-o-background-size:100%;background-size:100%;background-repeat:no-repeat;text-indent:-9999em;font-size:1px;border:none;width:20px;height:16px;background-color:#fff}.askInlineWidget .vote input[type=submit]:disabled{opacity:.4;cursor:default}.askInlineWidget .vote .label[data-count] .one{display:none}.askInlineWidget .vote .label[data-count] .more{display:inline}.askInlineWidget .vote .label[data-count='1'] .one{display:inline}.askInlineWidget .vote .label[data-count='1'] .more{display:none}.cdQuestionAnswerHeader{font-size:21px;font-weight:700;color:#333!important;padding-bottom:4px;line-height:1.3}.cdQuestionAnswerBucket{height:507px}.cdQuestionAnswerBucket .rounded-standard,.customerForumsBucket .rounded-standard{-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px}.cdQuestionAnswerBucket .dboards-btn,.customerForumsBucket .dboards-btn{color:#000;font-weight:700;text-decoration:none;text-align:center;display:inline-block;vertical-align:top;zoom:1;border-style:solid;border-width:1px;-moz-box-shadow:inset 0 -2px 2px rgba(0,0,0,.12);-webkit-box-shadow:inset 0 -2px 2px rgba(0,0,0,.12);box-shadow:inset 0 -2px 2px rgba(0,0,0,.12);cursor:pointer;margin:0;padding:0;outline:0;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none}.cdQuestionAnswerBucket .btn-prim,.customerForumsBucket .btn-prim{background:#e4e1db;background:-moz-linear-gradient(top,#fbcd5e,#fac237,#f7b42a);background:-webkit-gradient(linear,0 0,0 100%,from(#fbcd5e),to(#f7b42a));background:-webkit-linear-gradient(top,#fbcd5e,#fac237,#f7b42a);background:-o-linear-gradient(top,#fbcd5e,#f7b42a);background:-ms-linear-gradient(top,#fbcd5e,#f7b42a);background:linear-gradient(top,#fbcd5e,#f7b42a);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fbcd5e', endColorstr='#f7b42a');border-color:#f7b42a;text-shadow:#FFDD8C 0 1px 0}.cdQuestionAnswerBucket .dboards-btn span,.customerForumsBucket .dboards-btn span{color:#000;display:block}.cdQuestionAnswerBucket .dboards-btn .btn-small,.customerForumsBucket .dboards-btn .btn-small{font-size:12px;font-weight:700;line-height:16px;padding:1px 6px 2px 6px}.cdQuestionAnswerBucket .dboards-btn input.btn-small,.customerForumsBucket .dboards-btn input.btn-small{font-size:12px;font-weight:700;line-height:12px;padding:1px 6px 2px 6px;padding:3px 6px 3px 6px\9}.cdQuestionAnswerBucket span.dboards-btn input,.customerForumsBucket span.dboards-btn input{display:block;cursor:pointer;background:0 0;border:0}.cdQuestionAnswerBucket a.btn-prim:hover,.cdQuestionAnswerBucket span.btn-prim:hover,.customerForumsBucket a.btn-prim:hover,.customerForumsBucket span.btn-prim:hover{background:#fecd57;background:-moz-linear-gradient(top,#fecd57,#fdc94b,#fbc43c);background:-webkit-gradient(linear,0 0,0 100%,from(#fecd57),to(#fbc43c));background:-webkit-linear-gradient(top,#fecd57,#fdc94b,#fbc43c);background:-o-linear-gradient(top,#fecd57,#fbc43c);background:-ms-linear-gradient(top,#fecd57,#fbc43c);background:linear-gradient(top,#fecd57,#fbc43c);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fecd57', endColorstr='#fbc43c')}.cdQuestionAnswerBucket a.btn-sec:hover,.cdQuestionAnswerBucket span.btn-sec:hover,.customerForumsBucket a.btn-sec:hover,.customerForumsBucket span.btn-sec:hover{background:#f9f8f6;background:-moz-linear-gradient(top,#f9f8f6,#e4e1db,#f5f5f3);background:-webkit-gradient(linear,0 0,0 100%,from(#f9f8f6),to(#f5f5f3));background:-webkit-linear-gradient(top,#f9f8f6,#e4e1db,#f5f5f3);background:-o-linear-gradient(top,#f9f8f6,#f5f5f3);background:-ms-linear-gradient(top,#f9f8f6,#f5f5f3);background:linear-gradient(top,#f9f8f6,#f5f5f3);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f8f6', endColorstr='#f5f5f3')}.cdQuestionAnswerBucket .dboards-btn:hover span,.cdQuestionAnswerBucket a.dboards-btn:hover input,.customerForumsBucket .dboards-btn:hover span,.customerForumsBucket a.dboards-btn:hover input{color:#000;text-decoration:none;cursor:pointer}.cdQuestionAnswerBucket a.dboards-btn:active,.cdQuestionAnswerBucket span.dboards-btn:active,.customerForumsBucket a.dboards-btn:active,.customerForumsBucket span.dboards-btn:active{cursor:pointer;text-decoration:none;-moz-box-shadow:inset 0 1px 1px rgba(0,0,0,.4);-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.4);box-shadow:inset 0 1px 1px rgba(0,0,0,.4)}.cdQuestionAnswerBucket a.dboards-btn:active span,.customerForumsBucket a.dboards-btn:active span{color:#000;padding-top:3px}.cdQuestionAnswerBucket a.dboards-btn:active span.btn-small,.customerForumsBucket a.dboards-btn:active span.btn-small{line-height:14px}.cdQuestionAnswerBucket span.dboards-btn:active input,.customerForumsBucket span.dboards-btn:active input{padding:2px 6px 1px 6px}.cdQuestionAnswerBucket a.dboards-btn:active,.cdQuestionAnswerBucket input.btn-small:active,.customerForumsBucket a.dboards-btn:active,.customerForumsBucket input.btn-small:active{outline:0}.cdQuestionAnswerBucket .btn-sec,.customerForumsBucket .btn-sec{background:#e4e1db;background:-moz-linear-gradient(top,#f9f8f6,#e4e1db,#dad5ce);background:-webkit-gradient(linear,0 0,0 100%,from(#f9f8f6),to(#dad5ce));background:-webkit-linear-gradient(top,#f9f8f6,#e4e1db,#dad5ce);background:-o-linear-gradient(top,#f9f8f6,#dad5ce);background:-ms-linear-gradient(top,#f9f8f6,#dad5ce);background:linear-gradient(top,#f9f8f6,#dad5ce);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f8f6', endColorstr='#dad5ce');border-color:#b6b2aa;text-shadow:#f8f8ed 0 1px 0}.cdQuestionAnswerBucket a.btn-sec:hover,.cdQuestionAnswerBucket span.btn-sec:hover .customerForumsBucket a.btn-sec:hover,.customerForumsBucket span.btn-sec:hover{background:#f9f8f6;background:-moz-linear-gradient(top,#f9f8f6,#e4e1db,#f5f5f3);background:-webkit-gradient(linear,0 0,0 100%,from(#f9f8f6),to(#f5f5f3));background:-webkit-linear-gradient(top,#f9f8f6,#e4e1db,#f5f5f3);background:-o-linear-gradient(top,#f9f8f6,#f5f5f3);background:-ms-linear-gradient(top,#f9f8f6,#f5f5f3);background:linear-gradient(top,#f9f8f6,#f5f5f3);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f8f6', endColorstr='#f5f5f3')}.cdQuestionAnswerBucket,.cdQuestionAnswerBucket a,.cdQuestionAnswerBucket a:active,.cdQuestionAnswerBucket a:focus,.cdQuestionAnswerBucket a:visited,.cdQuestionAnswerBucket body,.cdQuestionAnswerBucket div,.cdQuestionAnswerBucket p,.cdQuestionAnswerBucket span,.cdQuestionAnswerBucket textarea{font-style:normal}.cdQuestionAnswerHeader{font-size:21px;font-weight:700;color:#333!important;padding-bottom:4px;line-height:1.3}.cdQuestionAnswerBucket a{text-decoration:none;color:#124C90}.cdQuestionLazySeeAll{float:left;padding:4px 0 8px 24px}.askReviewsPageAskWidget.a-column{float:none}.askReviewsPageAskWidget .askSubmitQuestion{float:right}.askReviewsPageAskWidget .askQuestionForm textarea{resize:none}.askReviewsPageAskWidget .askQuestionForm{overflow:hidden}.askReviewsPageAskWidget .askQuestionForm.hasBadQuestion .badQuestion,.askReviewsPageAskWidget .askQuestionForm.hasEmptyQuestion .emptyQuestion{display:block;width:75%}.askLiveSearchShow .askTeaserQuestions{display:none}.askLiveSearchHide .askLiveSearchResults{display:none}.askSearchInputIngress input{padding-right:25px}.askDisplayClearSearch{z-index:1;position:absolute;right:7px;top:12px;cursor:pointer;width:12px;height:12px}.askDisplayClearSearch:before{position:absolute;top:-11px;bottom:-6px;left:-6px;right:-7px;content:''}.askInlineWidget .askFailedToFetchMoreQuestions{color:#990D03;display:none;padding-bottom:10px}.askInlineWidget .askMoreQandAResults{margin-bottom:0}.askInlineWidget .askLoadMoreQuestions,.askInlineWidget .askTopQandALoadMoreQuestions{margin-left:175px}.askLiveSearchHide .askLiveSearchSeeAllQuestionsLink,.askLiveSearchShow .askFailedToFetchMoreQuestions,.askLiveSearchShow .askTopQandALoadMoreQuestions{display:none}.askInlineWidget .askSeeMoreQuestionsGrid{margin-top:0!important}.askInlineWidget .askFailedToFetchMoreAnswers{color:#990D03;display:none;padding-bottom:10px}.askInlineWidget .askInlineAnswers{display:none}.askInlineWidget .askCollpaseAdditionalAnswersButton{display:none;margin-top:-10px;padding-bottom:10px}.askInlineWidget .a-icon-extender-expand{margin-right:0}.askFormButtons{text-align:right}#ask-postAnswerButton,#ask-postAnswerCancel{display:inline-block}#ask-postAnswerCancel{margin-right:8px}.askDesktopUpperFunnelAllAnswersPage{background:#eaeded}.askDesktopUpperFunnelAllAnswersPageContent{min-width:0;width:655px;padding:20px;background:#fff}.askDesktopProductBox{min-width:0;width:655px;position:relative;background:#fff;border-bottom:1px solid rgba(0,0,0,.1);padding-top:0;padding-bottom:0}.upperFunnelAllAnswersPageBreadcrumb{background:#fff;border-bottom:1px solid #AAB7B8;padding:15px 0 14px 20px}.askDesktopProductBoxContentImageMask{position:absolute;top:0;right:0;bottom:0;left:0;margin:0;background-color:rgba(0,0,0,.03);z-index:999}.askVoteUpperFunnelAnswerYesForm{padding-left:14px;padding-right:2px}.askVoteUpperFunnelAnswerNoForm .a-button .a-button-inner,.askVoteUpperFunnelAnswerYesForm .a-button .a-button-inner{background:#fff}.askDeleteAnswerButton{margin-left:30px}.askQuestionListPage{margin:0 20px}.askQuestionListPage .askInlineWidget{padding-left:15px}.askQuestionListPage .askPaginationHeaderMessage{padding-top:5px}.askQuestionListPage .askSortPrompt{padding-right:6px}.askQuestionListPage .questionTextInput{width:50%;display:inline-block}.askQuestionListPage .askManufacturer{color:#666;font-size:12px}.askQuestionListPage .askAlertBox{width:50%}.askQuestionListPage .askProductDescription{margin-top:37px}.a-no-js .askQuestionListSortOption{display:none!important;visibility:hidden!important}.askQuestionListPage .a-subheader.a-breadcrumb ul li a{margin-left:20px}.askPostQuestionButtonContainer{display:none}.askAnswerMoreQuestionsModal{position:relative}.askAnswerMoreQuestionsModal .a-carousel-card{padding-left:14px}.answerMoreQuestionDesktopCard{overflow-y:auto;height:230px}.answerMoreQuestionsAnswerConfirmDesktopCard{height:295px;overflow-y:auto}.askAnswerMoreQuestionsPostAnswerSpinner{display:none;left:50%;top:50%;position:absolute;z-index:2;margin-left:-16px;margin-top:-16px;transform:translate(-50%,-50%)}.askAnswerMoreQuestionsModal ul.a-pagination.a-dots li{-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;border-radius:6px;border:1px solid #949494;height:9px;width:9px;background-color:#f3f3f3;display:inline-block}.askAnswerMoreQuestionsModal ul.a-pagination li.a-selected{background-color:#949494}.askAnswerMoreQuestionsDesktopBackDeactivate{color:#767676}.askAnswerMoreQuestionsDesktopBackActivate{color:#0066c0}.askAnswerMoreQuestionsDesktopPagination{margin:0 14px;padding-left:14px}.askAnswerMoreQuestionsDesktopPagination .a-link-normal{float:right}.askSearchResultsHeader{cursor:pointer;display:inline-block;padding:20px;padding-bottom:8px;padding-top:14px}.askSearchResultsHeaderActive{font-weight:700;border-bottom:3px solid #ffa700}.askDPSearchFailureMessage,.askDPSearchQuestionErrorContainer .askError,.askDPSearchSearchIndicator,.askPostQuestionPromptContainer,.askSearchResults:not(.askSearchResultsActive),.askSearchTabHeaders{display:none}.askDPSearchViewContent{max-width:1000px;word-wrap:break-word;overflow:hidden}.askDPSearchForm,.askDPSearchQuestionErrorContainer{margin-bottom:0}.askBottomPostQuestionContainer .askBtfSearchPostTextInput,.askBottomPostQuestionContainer .askDPSearchPostTextInput{margin-left:14px}.askBottomPostQuestionContainer .askPostQuestionPromptButton{max-width:100px;margin-left:5px}.askBottomPostQuestionContainer .a-icon-popover{display:none}.askFollowupQuestion{display:inline-block;max-width:100%;padding:0 14px;margin:0 10px 14px 0;background-color:#EBF8FA;border-bottom:solid 1px #969696;line-height:29px;color:#002F36}.a-icon-search.ask-swdp-search-button-icon{margin-left:40px;margin-right:5px}.ask-swdp-search-button-placeholder{margin-right:40px}
@@ -24265,7 +24570,7 @@ function prefetchTYPAssets() {
     for (var i=0; i<imageAssets.length; i++) {
        new Image().src = imageAssets[i];
     }
-    // pre-fetching css and js assets based on different browser types
+    // pre-fetching SelectCss.py and js assets based on different browser types
     var isIE = /*@cc_on!@*/0;
     var isFireFox = /Firefox/.test(navigator.userAgent);
     if (isIE) {

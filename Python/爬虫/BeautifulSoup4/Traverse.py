@@ -2,7 +2,7 @@
 @Author: your name
 @Date: 2020-02-11 17:43:24
 @LastEditTime : 2020-02-13 16:07:47
-@LastEditors  : Please set LastEditors
+@LastEditors: Please set LastEditors
 @Description: In User Settings Edit
 @FilePath: \Python\爬虫\BeautifulSoup4\Traverse.py
 '''
@@ -21,7 +21,7 @@ all_a = soup.find_all('a')
 for item in all_a[:3]:
     print(item)
 # 找到a标签中指定id的标签
-all_a = soup.find_all('a'，id = '')
+all_a = soup.find_all('a', id='')
 
 # print(all_a[3])
 # print(soup.find_all('a'))

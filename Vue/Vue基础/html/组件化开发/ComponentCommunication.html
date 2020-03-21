@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h2>
+      <h2>输入</h2>
+      <input type="number" v-model.number="addNumber"/>
+      <input type="number" v-model.number="subNumber"/><br>
+      <h2>父组件展示：{{count}}</h2>
+    </h2>
+    <!-- 将父组件数据绑定到子组件进行传递。父组件监听子组件的自定义事件，并且调用函数，默认值为子组件传递的值 -->
+    <counter :number1="addNumber" :number2="subNumber" @children-commit="show"></counter>
+  </div>
+
+  <template id="counter">
+    <div>
+      <h2>子组件计数：{{count}}</h2>
+      <button @click="add">+{{number1}}</button>
+      <button @click="sub">-{{number2}}</button><br>
+      <button @click="commit(count)">提交</button>
+    </div>
+  </template>
+  
+  <script>
+    const counter = {
+      template:"#counter",
+      data(){
+        return {
+          count:0
+        }
+      },
+      props:{
+        //父组件传递数据
+        number1:{
+          type:Number,
+          default:0
+        },
+        number2:{
+          type:Number,
+          default:0
+        }
+      },
+      methods:{
+        add(){
+          this.count+=this.number1;
+        },
+        sub(){
+          this.count-=this.number2;
+        },
+        commit(count){
+          // 自定义事件childrenCommit，供父组件监听
+          this.$emit('children-commit',count);
+        }
+      }
+    }
+
+    let vm=new Vue({
+      el:'#app',
+      data:{
+        count : 0,
+        addNumber:0,
+        subNumber:0
+      },
+      components:{
+        counter
+      },
+      methods:{
+        show(count){
+          this.count=count;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

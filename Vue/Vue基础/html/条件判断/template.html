@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>if-else</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<template v-if="yes">
+				<p>hhhh</p>		
+			</template>
+			
+			<!-- v-if与v-else必须紧挨着 -->
+			<div v-if="yes">yes</div>
+			<div v-show="yes">show</div>
+			<p>hhhhhhh</p>
+			<!-- <div v-else>no</div> -->
+		</div>
+	</body>
+	<script>
+		let vue = new Vue({
+		el:"#app",
+		data:{
+			yes: false		
+		},
+		methods:{
+			change:function(index){
+				this.status[index] = true;
+				this.status[this.lastStatu] = false;
+			}
+		}
+	})
+	</script>
+	
+</html>

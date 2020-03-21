@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <cpn :todos = "todos">
+      <!-- #todo先绑定了name="todo"的插槽，然后获取传入的prop -->
+      <template #todo="{ todo }">
+        <span v-if="todo.isComplete">✓</span>
+        {{ todo.text }}
+      </template>
+    </cpn>
+  </div>
+  
+  <template id = "other">
+    <div>
+      <ul>
+        <li
+          v-for="todo in filteredTodos"
+          v-bind:key="todo.id">
+          <!--
+          我们为每个 todo 准备了一个插槽，
+          将 `todo` 对象作为一个插槽的 prop 传入。
+          -->
+          <slot name="todo" :todo="todo">
+            <!-- 后备内容 -->
+            {{ todo.text }}
+          </slot>
+        </li>
+      </ul>
+    </div>
+  </template>
+  <script>
+    const cpn = {
+      template : "#other",
+      data(){
+        return {
+          filteredTodos:[{
+            id : 1,
+            text: "1",
+            isComplete: true
+          },
+          {
+            id : 2,
+            text: "2",
+            isComplete: true
+          },
+          {
+            id : 3,
+            text: "3",
+            isComplete: false
+          }]
+        }
+      }
+    }
+    let vm=new Vue({
+      el:'#app',
+      data:{
+        todos:[]
+      },
+      methods:{},
+      components:{
+        cpn
+      }
+    });
+  </script>
+</body>
+</html>

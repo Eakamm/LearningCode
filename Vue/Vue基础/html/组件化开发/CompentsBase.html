@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <cpn1></cpn1>
+    <!-- <cpn2></cpn2> -->
+  </div>
+
+  <div id = "app2">
+    <cpn3></cpn3>
+  </div>
+
+  <!-- 组件模板分离(模板) -->
+  <template id="cpnC3">
+    <div>
+      <h2>我是标题</h2>
+      <p>我是内容3</p> 
+    </div>
+  </template>
+
+  <script>
+    // 1.创建组件构造器对象
+    // const cpnC = Vue.extend({
+    //   template: `
+    //     <div>
+    //       <h2>我是标题</h2>
+    //       <p>我是内容, 哈哈哈哈</p>
+    //       <p>我是内容, 呵呵呵呵</p>
+    //     </div>`
+    // })
+
+    // 2.注册组件，全局组件
+    // Vue.component('cpn1', cpnC)
+
+    //3、父子组件
+    // const cpnC2 = Vue.extend({
+    //   template: `
+    //     <div>
+    //       <h2>我是标题</h2>
+    //       <p>我是内容, 哈哈哈哈</p>
+    //       <p>我是内容, 呵呵呵呵</p>
+    //       <cpn1></cpn1>
+    //     </div>
+    //     `
+    //     ,//注册组件,子组件
+    //     components:{
+    //       cpn1:cpnC
+    //     }
+    // })
+
+    // Vue.component('cpn2',cpnC2)
+
+    //语法糖
+    //全局
+    Vue.component('cpn1', {
+      template: `
+        <div>
+          <h2>我是标题</h2>
+          <p>我是内容, 哈哈哈哈</p>
+          <p>我是内容, 呵呵呵呵</p>
+        </div>`
+    })
+    let vm=new Vue({
+      el:'#app'
+      ,
+      components:{
+        //局部组件语法糖
+        // cpn1:{
+        //   template: 
+        //   `<div>
+        //       <h2>我是标题</h2>
+        //       <p>我是内容, 哈哈哈哈</p>
+        //       <p>我是内容, 呵呵呵呵</p>
+        //     </div>`
+        // }  
+      }
+
+    });
+
+    // 组件模板分离(组件)
+    Vue.component('cpn3',{
+      template:'#cpnC3'
+    })
+
+    let vh=new Vue({
+      el:'#app2',
+      // components:{
+      //   cpn3:'#cpnC3'
+      // }
+    });
+  </script>
+</body>
+</html>

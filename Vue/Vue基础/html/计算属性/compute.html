@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>计算属性</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+	</head>
+	<body>
+		<div id="app">
+			<h1>
+				{{totalId}}
+			</h1>
+			<ul>
+				<li v-for="l in customer">{{l.id}}---{{l.password}}</li>
+			</ul>
+			<h1>{{yes}}</h1>
+			<button @click="get">bian</button>
+		</div>
+	</body>
+	<script>
+		let vue = new Vue({
+		el:"#app",
+		data:{
+			yes: false,
+			customer:[{id:"1"},{id:"2"}]
+		},
+		created(){
+				
+			// axios.get('http://localhost:8081/test'
+			// 	)
+			// 	.then(function(response){
+			// 		console.log(response.data);
+			// 		this.customer = response.data;
+			// 		// alert(this.customer[0]);
+			// 		console.log(this.customer[0].id);
+			// 	})
+			// 	.catch(function(error){
+			// 		
+			// 	})
+		},
+		computed:{
+			totalId:function(){
+				let total = 0;
+				for (let var1= 0;var1 < this.customer.length; var1++) {
+					total=total + parseInt(this.customer[var1].id);
+					console.log(total+this.customer[var1].id)
+				}
+				return total;
+			}
+		},
+		methods:{
+			get(){
+				axios.get('http://localhost:8081/test'
+					)
+					.then((res)=>{
+						console.log(res.data);
+						this.customer = res.data;
+						// alert(this.customer[0].id);
+						console.log(this.customer);
+					})
+					.catch(function(error){
+						alert('cuowu');
+					})
+			}
+		}
+	})
+	</script>
+	
+</html>
