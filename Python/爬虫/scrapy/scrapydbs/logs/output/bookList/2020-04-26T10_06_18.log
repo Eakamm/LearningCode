@@ -1,0 +1,166 @@
+2020-04-26 10:06:34 [scrapy.utils.log] INFO: Scrapy 1.8.0 started (bot: JingDong)
+2020-04-26 10:06:34 [scrapy.utils.log] INFO: Versions: lxml 4.5.0.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.8.0 (tags/v3.8.0:fa919fd, Oct 14 2019, 19:37:50) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1d  10 Sep 2019), cryptography 2.8, Platform Windows-10-10.0.19041-SP0
+2020-04-26 10:06:34 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'JingDong', 'DOWNLOAD_DELAY': 0.5, 'LOG_FILE': 'logs\\output\\bookList\\2020-04-26T10_06_18.log', 'NEWSPIDER_MODULE': 'JingDong.spiders', 'SPIDER_MODULES': ['JingDong.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
+2020-04-26 10:06:34 [scrapy.extensions.telnet] INFO: Telnet Password: 5ee73c11fe830051
+2020-04-26 10:06:35 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-26 10:06:35 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-26 10:06:35 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-26 10:06:35 [scrapy.middleware] INFO: Enabled item pipelines:
+['JingDong.pipelines.JingdongPipeline']
+2020-04-26 10:06:35 [scrapy.core.engine] INFO: Spider opened
+2020-04-26 10:06:35 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-26 10:06:35 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2020-04-26 10:06:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4> (referer: None)
+2020-04-26 10:06:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/4913064/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:37 [py.warnings] WARNING: C:\Users\11346\AppData\Roaming\Python\Python38\site-packages\pymysql\cursors.py:170: Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 519")
+  result = self._query(query)
+
+2020-04-26 10:06:37 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/4913064/>
+{'image_url': 'https://img3.doubanio.com/view/subject/l/public/s29053580.jpg', 'title': '活着', 'rate': '9.4', 'original_name': None, 'translator': None, 'author': '余华', 'publisher': '作家出版社', 'publish_time': '2012-8-1', 'descripe': '《活着(新版)》讲述了农村人福贵悲惨的人生遭遇。福贵本是个阔少爷，可他嗜赌如命，终于赌光了家业，一贫如洗。他的父亲被他活活气死，母亲则在穷困中患了重病，福贵前去求药，却在途中被国民党抓去当壮丁。经过几番波折回到家里，才知道母亲早已去世，妻子家珍含辛茹苦地养大两个儿女。此后更加悲惨的命运一次又一次降临到福贵身上，他的妻子、儿女和孙子相继死去，最后只剩福贵和一头老牛相依为命，但老人依旧活着，仿佛比往日更加洒脱与坚强。《活着(新版)》荣获意大利格林扎纳•卡佛文学奖最高奖项（1998年）、台湾《中国时报》10本好书奖（1994年）、香港“博益”15本好书奖（1994年）、第三届世界华文“冰心文学奖”（2002年），入选香港《亚洲周刊》评选的“20世纪中文小说百年百强”、中国百位批评家和文学编辑评选的“20世纪90年代最有影响的10部作品”。', 'original_price': 20.0, 'ISBN': '9787506365437', 'dou_ban_url': 'https://book.douban.com/subject/4913064/', 'jd_url': 'https://book.douban.com/link2/?lowest=1380&pre=0&vendor=jingdong&srcpage=subject&price=1380&pos=2&url=http%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIOZR5aEQISA1AYUyUCEgZdGlwQACJDCkMFSjJLQhBaUAscSkIBR0ROVw1VC0dFFQITD1QcXhcdS0IJRmtBe2EFAXxSFGdWfVFaQW9YSmMmRT9DDh43Uh5cEwUbBFIrWxEDFgNlK1sUMkBpja3tzaejG4Gx1MCKhTdUK1sQCxsDUBpdEwMQAFwrXCXbkrCDucnMnJjS3YxrJTIi%26t%3DW1dCFBBFC1pXUwkEAEAdQFkJBVsVAxoGUh5ZCltXWwg%253D&cntvendor=4&srcsubj=4913064&type=bkbuy&subject=4913064'}
+2020-04-26 10:06:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/34672176/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:38 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/34672176/>
+{'image_url': 'https://img1.doubanio.com/view/subject/l/public/s33519539.jpg', 'title': '呼吸', 'rate': '8.6', 'original_name': 'Exhalation: Stories', 'translator': '耿辉', 'author': '[美] 特德·姜', 'publisher': '译林出版社', 'publish_time': '2019-12', 'descripe': '特德·姜作品新结集，内藏《商人和炼金术师之门》《呼吸》《前路迢迢》《软件体的生命周期》《达西的新型自动机器保姆》《双面真相》《大寂静》《脐》《焦虑是自由引起的眩晕》九篇作品——炼金术士之门，自由穿梭时空，科幻版的一千零一夜如何展开？我的每一口呼吸，都让这个宇宙离死亡更近一步。自由意志并不存在，只是你相信这一点之前，它并不具有杀伤力。科幻小说中随处可见人造生物，就像从宙斯头部跳出的雅典娜，这些人造生物一出现就完全成形。但意识并不是这样工作的，软件体真实的生命周期是什么样？我的保姆是台机器，对一个新生儿来说，这意味着什么？记忆一直在欺骗我们，只是我们自己并未发现。如果每个人都开始持续记录生命日志，文明将发生怎样的改变？我们并不是宇宙的中心，可一开始，人类并不知道这一点。如果平行空间的确存在，且可以发生对话，你会用怎样的方式穷尽生活的可能？...(展开全部)', 'original_price': 4.0, 'ISBN': '9787544779319', 'dou_ban_url': 'https://book.douban.com/subject/34672176/', 'jd_url': 'https://book.douban.com/link2/?lowest=3779&pre=0&vendor=jingdong&srcpage=subject&price=3779&pos=2&url=https%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIGZRtYFAcXBFIZWR0yEgRRE1wVBRA3EUQDS10iXhBeGlcJDBkNXg9JHUlSSkkFSRwSBFETXBUFEBgMXgdIMmlaDBoabEl6YgYBDU1VEVchRVhUWlQLWStcEAUUAFwYXCUCFgZRH2slAhM3B3WDo7TKouQHj7%252BNx4%252FCK1olAhYBUBxcHAIWBVwTWiUCGgNlwtui1LCVjIXRwIqFN2UrWCUyIgdlG2tKRk9aZRlaFAAQ&cntvendor=3&srcsubj=34672176&type=bkbuy&subject=34672176'}
+2020-04-26 10:06:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/1043815/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:39 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/1043815/>
+{'image_url': 'https://img3.doubanio.com/view/subject/l/public/s1146040.jpg', 'title': '骆驼祥子', 'rate': '8.4', 'original_name': None, 'translator': None, 'author': '老舍', 'publisher': '人民文学出版社', 'publish_time': '2000-3-1', 'descripe': '《骆驼祥子》是老舍用同情的笔触描绘的一幕悲剧：二十年代的北京，一个勤劳、壮实的底层社会小人物怀着发家、奋斗的美好梦想，却最终为黑暗的暴风雨所吞噬。它揭示了当时“小人物”的奴隶心理和希望的最终破灭。随着祥子心爱的女人小福子的自杀，祥子熄灭了个人奋斗的最后一朵火花。这是旧中国老北京贫苦市民的典型命运。', 'original_price': 12.0, 'ISBN': '9787020028115', 'dou_ban_url': 'https://book.douban.com/subject/1043815/', 'jd_url': None}
+2020-04-26 10:06:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/24257229/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:39 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/24257229/>
+{'image_url': 'https://img3.doubanio.com/view/subject/l/public/s27003191.jpg', 'title': '鼠疫', 'rate': '9.1', 'original_name': 'La Peste', 'translator': '刘方', 'author': '(法)阿尔贝·加缪', 'publisher': '上海译文出版社', 'publish_time': '2013-8', 'descripe': '阿尔贝•加缪（1913—1960）是法国声名卓著的小说家、散文家和剧作家，“存在主义”文学的大师。1957年因“热情而冷静地阐明了当代向人类良知提出的种种问题”而获诺贝尔文学奖，是有史以来最年轻的诺奖获奖作家之一。加缪在他的小说、戏剧、随笔和论著中深刻地揭示出人在异己的世界中的孤独、个人与自身的日益异化，以及罪恶和死亡的不可避免，但他在揭示出世界的荒诞的同时却并不绝望和颓丧，他主张要在荒诞中奋起反抗，在绝望中坚持真理和正义，他为世人指出了一条基督教和马克思主义以外的自由人道主义道路。他直面惨淡人生的勇气，他“知其不可而为之”的大无畏精神使他在第二次世界大战之后不仅在法国，而且在欧洲并最终在全世界成为他那一代人的代言人和下一代人的精神导师。', 'original_price': 34.0, 'ISBN': '9787532761753', 'dou_ban_url': 'https://book.douban.com/subject/24257229/', 'jd_url': 'https://book.douban.com/link2/?lowest=3060&pre=0&vendor=jingdong&srcpage=subject&price=3060&pos=1&url=http%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIOZR5aEQISA1AYUyUCEgRTGVMdBSJDCkMFSjJLQhBaUAscSkIBR0ROVw1VC0dFFQIRAVcTUxIdS0IJRmt8SmoPLk8bZWAadQlSI2JqYFUrASF1Dh43Uh5cEwUbBFIrWxEDFgNlK1sUMkBpja3tzaejG4Gx1MCKhTdUK1sQCxsDUBtYHAoSDlwrXCXbkrCDucnMnJjS3YxrJTIi%26t%3DW1dCFBBFC1pXUwkEAEAdQFkJBVsVARQFXRNcCltXWwg%253D&cntvendor=3&srcsubj=24257229&type=bkbuy&subject=24257229'}
+2020-04-26 10:06:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/34434309/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:40 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/34434309/>
+{'image_url': 'https://img1.doubanio.com/view/subject/l/public/s33463759.jpg', 'title': '82年生的金智英', 'rate': '7.9', 'original_name': '82년생 김지영', 'translator': '尹嘉玄', 'author': '[韩]赵南柱', 'publisher': '贵州人民出版社', 'publish_time': '2019-9', 'descripe': '一个女孩要经历多少看不见的坎坷，才能跌跌撞撞地长大成人。亚洲10年来罕见的现象级畅销书，凭口口相传在韩国销量突破100万册。韩国书店联合会评选2017年最佳小说，作者赵南柱被授予“年度作家”殊荣。韩国总统文在寅、国民主持人刘在石、“少女时代”崔秀英、BTS团长金南 俊都 在阅读， 但阅读这本书的女艺人会被人身攻击。《熔炉》《釜山行》原班主演孔侑、郑有美出演同名电影即将上映。内容简介：金智英，1982年4月1日出生于首尔某医院妇产科。成长于公务员家庭，一家六口人住在三十三平的房子里。她就是那种你每天都会迎面遇到的普通女孩。从小，金智英就有很多困惑。家里最好的东西总是优先给弟弟，她和姐姐只能享有剩下的食物，共用一间房、一床被子。上小学时，被邻座男孩欺负，她哭着向老师倾诉，老师却笑着说：“男孩子都是这样的，愈是喜欢的女生就愈会欺负她。”上...(展开全部)', 'original_price': 45.0, 'ISBN': '9787221153159', 'dou_ban_url': 'https://book.douban.com/subject/34434309/', 'jd_url': 'https://book.douban.com/link2/?lowest=3500&pre=0&vendor=jingdong&srcpage=subject&price=4029&pos=2&url=https%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIGZRtYFAcXBFIZWR0yEgRSHVkUBBc3EUQDS10iXhBeGlcJDBkNXg9JHUlSSkkFSRwSBFIdWRQEFxgMXgdIMghuElwwZVVmZFNtD25BQn4rfVNlR0QLWStcEAUUAFwYXCUCFgZRH2slAhM3B3WDo7TKouQHj7%252BNx4%252FCK1olAhYAXBpdHAsTAlQeXSUCGgNlwtui1LCVjIXRwIqFN2UrWCUyIgdlG2tKRk9aZRlaFAAQ&cntvendor=4&srcsubj=34434309&type=bkbuy&subject=34434309'}
+2020-04-26 10:06:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/26954760/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/26954760/>
+{'image_url': 'https://img1.doubanio.com/view/subject/l/public/s29634528.jpg', 'title': '月亮与六便士', 'rate': '8.8', 'original_name': 'The Moon and Sixpence', 'translator': '徐淳刚', 'author': '[英] 威廉·萨默塞特·毛姆', 'publisher': '浙江文艺出版社', 'publish_time': '2017-1-1', 'descripe': '“满地都是六便士，他却抬头看见了月亮。”银行家查尔斯，人到中年，事业有成，为了追求内心隐秘的绘画梦想，突然抛妻别子，弃家出走。他深知：人的每一种身份都是一种自我绑架，唯有失去是通向自由之途。在异国他乡，他贫病交加，对梦想却愈发坚定执着。他说：我必须画画，就像溺水的人必须挣扎。在经历种种离奇遭遇后，他来到南太平洋的一座孤岛，同当地一位姑娘结婚生子，成功创作出一系列惊世杰作。就在此时，他被绝症和双目失明击倒，临死之前，他做出了让所有人震惊的决定……人世漫长得转瞬即逝，有人见尘埃，有人见星辰。查尔斯就是那个终其一生在追逐星辰的人。', 'original_price': 39.8, 'ISBN': '9787533936020', 'dou_ban_url': 'https://book.douban.com/subject/26954760/', 'jd_url': 'https://book.douban.com/link2/?lowest=2220&pre=0&vendor=jingdong&srcpage=subject&price=3779&pos=2&url=http%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIOZR5aEQISA1AYUyUCEQdVG1sUBSJDCkMFSjJLQhBaUAscSkIBR0ROVw1VC0dFFQESB1UbWhIdS0IJRmtSfWVYLBMEEWBtXx15XUVYFnhSfTt1Dh43Uh5cEwUbBFIrWxEDFgNlK1sUMkBpja3tzaejG4Gx1MCKhTdUK1sQCxsDUBpSEwoWD1IrXCXbkrCDucnMnJjS3YxrJTIi%26t%3DW1dCFBBFC1pXUwkEAEAdQFkJBVsWAhIHVRpcCltXWwg%253D&cntvendor=4&srcsubj=26954760&type=bkbuy&subject=26954760'}
+2020-04-26 10:06:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/4820710/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/1068920/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:43 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/4820710/>
+{'image_url': 'https://img1.doubanio.com/view/subject/l/public/s4371408.jpg', 'title': '1984', 'rate': '9.3', 'original_name': 'Nineteen Eighty-Four', 'translator': None, 'author': '[英]\n            乔治·奥威尔', 'publisher': '北京十月文艺出版社', 'publish_time': '2010-4-1', 'descripe': '★村上春树以《1Q84》向本书致敬★著名学者刘绍铭经典译本内地首次出版★62种文字风靡110个国家，全球销量超过5000万册★《时代周刊》“最好的100本英语小说”★兰登书屋“100本20世纪最佳英语小说”★入选英美中学生必读书书目1936年以来，我所写的每 一部严肃作品，都是直接或间接地反对极权主义，支持我所理解的民主社会主义。 ——乔治•奥威尔（《我为何写作》）《1984》是一部杰出的政治寓言小说，也是一部幻想小说。作品刻画了人类在极权主义社会的生存状态，有若一个永不褪色的警示标签，警醒世人提防这种预想中的黑暗成为现实。历经几十年，其生命力益显强大，被誉为20世纪影响最为深远的文学经典之一。', 'original_price': 28.0, 'ISBN': '9787530210291', 'dou_ban_url': 'https://book.douban.com/subject/4820710/', 'jd_url': None}
+2020-04-26 10:06:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/2567698/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:43 [scrapy.core.scraper] ERROR: Spider error processing <GET https://book.douban.com/subject/1068920/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+Traceback (most recent call last):
+  File "c:\program files\python38\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\program files\python38\lib\site-packages\scrapy\core\spidermw.py", line 84, in evaluate_iterable
+    for r in iterable:
+  File "c:\program files\python38\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\program files\python38\lib\site-packages\scrapy\core\spidermw.py", line 84, in evaluate_iterable
+    for r in iterable:
+  File "c:\program files\python38\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\program files\python38\lib\site-packages\scrapy\core\spidermw.py", line 84, in evaluate_iterable
+    for r in iterable:
+  File "c:\program files\python38\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\program files\python38\lib\site-packages\scrapy\core\spidermw.py", line 84, in evaluate_iterable
+    for r in iterable:
+  File "c:\program files\python38\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\users\11346\appdata\local\temp\output-2020-04-23t16_54_57-ryj23pcj.egg\JingDong\spiders\DouBanBookList.py", line 89, in parse_details
+    if self.pattern.search(li['data-track']):
+  File "c:\program files\python38\lib\site-packages\bs4\element.py", line 1321, in __getitem__
+    return self.attrs[key]
+KeyError: 'data-track'
+2020-04-26 10:06:43 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/2567698/>
+{'image_url': 'https://img1.doubanio.com/view/subject/l/public/s2768378.jpg', 'title': '三体', 'rate': '8.8', 'original_name': None, 'translator': None, 'author': '刘慈欣', 'publisher': '重庆出版社', 'publish_time': '2008-1', 'descripe': '文化大革命如火如荼进行的同时。军方探寻外星文明的绝秘计划“红岸工程”取得了突破性进展。但在按下发射键的那一刻，历经劫难的叶文洁没有意识到，她彻底改变了人类的命运。地球文明向宇宙发出的第一声啼鸣，以太阳为中心，以光速向宇宙深处飞驰……四光年外，“三体文明”正苦苦挣扎——三颗无规则运行的太阳主导下的百余次毁灭与重生逼迫他们逃离母星。而恰在此时。他们接收到了地球发来的信息。在运用超技术锁死地球人的基础科学之后。三体人庞大的宇宙舰队开始向地球进发……人类的末日悄然来临。', 'original_price': 23.0, 'ISBN': '9787536692930', 'dou_ban_url': 'https://book.douban.com/subject/2567698/', 'jd_url': 'https://book.douban.com/link2/?lowest=1889&pre=0&vendor=jingdong&srcpage=subject&price=1939&pos=2&url=http%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIOZR5aEQISA1AYUyUCEwZVE1MVBCJDCkMFSjJLQhBaUAscSkIBR0ROVw1VC0dFFQMTB10TWxMdS0IJRmsQcEBwDGUhTWJXcR15BVAEeWZVQztlDh43Uh5cEwUbBFIrWxEDFgNlK1sUMkBpja3tzaejG4Gx1MCKhTdUK1sQCxsDUBpdEQsUBVwrXCXbkrCDucnMnJjS3YxrJTIi%26t%3DW1dCFBBFC1pXUwkEAEAdQFkJBVsUAxIPXRtdCltXWwg%253D&cntvendor=4&srcsubj=2567698&type=bkbuy&subject=2567698'}
+2020-04-26 10:06:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/3211779/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:43 [scrapy.core.scraper] ERROR: Spider error processing <GET https://book.douban.com/subject/3211779/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+Traceback (most recent call last):
+  File "c:\program files\python38\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\program files\python38\lib\site-packages\scrapy\core\spidermw.py", line 84, in evaluate_iterable
+    for r in iterable:
+  File "c:\program files\python38\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\program files\python38\lib\site-packages\scrapy\core\spidermw.py", line 84, in evaluate_iterable
+    for r in iterable:
+  File "c:\program files\python38\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\program files\python38\lib\site-packages\scrapy\core\spidermw.py", line 84, in evaluate_iterable
+    for r in iterable:
+  File "c:\program files\python38\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\program files\python38\lib\site-packages\scrapy\core\spidermw.py", line 84, in evaluate_iterable
+    for r in iterable:
+  File "c:\program files\python38\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\users\11346\appdata\local\temp\output-2020-04-23t16_54_57-ryj23pcj.egg\JingDong\spiders\DouBanBookList.py", line 89, in parse_details
+    if self.pattern.search(li['data-track']):
+  File "c:\program files\python38\lib\site-packages\bs4\element.py", line 1321, in __getitem__
+    return self.attrs[key]
+KeyError: 'data-track'
+2020-04-26 10:06:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/1200840/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/1200840/>
+{'image_url': 'https://img3.doubanio.com/view/subject/l/public/s1144911.jpg', 'title': '平凡的世界（全三部）', 'rate': '9.0', 'original_name': None, 'translator': None, 'author': '路遥', 'publisher': '人民文学出版社', 'publish_time': '2005-1', 'descripe': '《平凡的世界》是一部现实主义小说，也是一部小说形式的家族史。作者浓缩了中国西北农村的历史变迁过程，在小说中全景式地表现了中国当代城乡的社会生活。在近十年的广阔背景下，通过复杂的矛盾纠葛，刻划社会各阶层众多普通人的形象。劳动与爱情，挫折与追求，痛苦与欢乐，日常生活与巨大社会冲突，纷繁地交织在一起，深刻地展示了普通人在大时代历史进程中所走过的艰难曲折的道路。', 'original_price': 64.0, 'ISBN': '9787020049295', 'dou_ban_url': 'https://book.douban.com/subject/1200840/', 'jd_url': None}
+2020-04-26 10:06:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/1008145/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:45 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/1008145/>
+{'image_url': 'https://img3.doubanio.com/view/subject/l/public/s1070222.jpg', 'title': '围城', 'rate': '8.9', 'original_name': None, 'translator': None, 'author': '钱钟书', 'publisher': '人民文学出版社', 'publish_time': '1991-2', 'descripe': '《围城》是钱钟书所著的长篇小说。第一版于1947年由上海晨光出版公司出版。1949年之后，由于政治等方面的原因，本书长期无法在中国大陆和台湾重印，仅在香港出现过盗印本。1980年由作者重新修订之后，在中国大陆地区由人民文学出版社刊印。此后作者又曾小幅修改过几次。《围城》 自从出版以来，就受到许多人的推崇。由于1949年后长期无法重印，这本书逐渐淡出人们的视野。1960年代，旅美汉学家夏志清在《中国现代小说史》(A History of Modern Chinese Fiction)中对本书作出很高的评价，这才重新引起人们对它的关注。人们对它的评价一般集中在两方面，幽默的语言和对生活深刻的观察。从1990年代开始，也有人提出对本书的不同看法，认为这是一部被“拔高”的小说，并不是一部出色的作品。很多人认为这是一部幽默作品。除了各具特色的人物语言之外，作者...(展开全部)', 'original_price': 19.0, 'ISBN': '9787020024759', 'dou_ban_url': 'https://book.douban.com/subject/1008145/', 'jd_url': None}
+2020-04-26 10:06:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/10594787/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/10594787/>
+{'image_url': 'https://img3.doubanio.com/view/subject/l/public/s11284102.jpg', 'title': '霍乱时期的爱情', 'rate': '9.0', 'original_name': 'El amor en los tiempos del cólera', 'translator': '杨玲', 'author': '[哥伦比亚] 加西亚·马尔克斯', 'publisher': '南海出版公司', 'publish_time': '2012-9-1', 'descripe': '★马尔克斯唯一正式授权，首次完整翻译★《霍乱时期的爱情》是我最好的作品，是我发自内心的创作。——加西亚•马尔克斯★这部光芒闪耀、令人心碎的作品是人类有史以来最伟大的爱情小说。——《纽约时报》《霍乱时期的爱情》是加西亚•马尔克斯获得诺贝尔文学奖之后完成的第一部小说。讲述了一段跨越半个多世纪的爱情史诗，穷尽了所有爱情的可能性：忠贞的、隐秘的、粗暴的、羞怯的、柏拉图式的、放荡的、转瞬即逝的、生死相依的……再现了时光的无情流逝，被誉为“人类有史以来最伟大的爱情小说”，是20世纪最重要的经典文学巨著之一。', 'original_price': 39.5, 'ISBN': '9787544258975', 'dou_ban_url': 'https://book.douban.com/subject/10594787/', 'jd_url': None}
+2020-04-26 10:06:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/1084336/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/1084336/>
+{'image_url': 'https://img3.doubanio.com/view/subject/l/public/s1103152.jpg', 'title': '小王子', 'rate': '9.0', 'original_name': 'Le Petit Prince', 'translator': '马振聘', 'author': '[法]\n            安东尼·德·圣-埃克苏佩里', 'publisher': '人民文学出版社', 'publish_time': '2003-8', 'descripe': '小王子是一个超凡脱俗的仙童，他住在一颗只比他大一丁点儿的小行星上。陪伴他的是一朵他非常喜爱的小玫瑰花。但玫瑰花的虚荣心伤害了小王子对她的感情。小王子告别小行星，开始了遨游太空的旅行。他先后访问了六个行星，各种见闻使他陷入忧伤，他感到大人们荒唐可笑、太不正常。只有在其中一个点灯人的星球上，小王子才找到一个可以作为朋友的人。但点灯人的天地又十分狭小，除了点灯人他自己，不能容下第二个人。在地理学家的指点下，孤单的小王子来到人类居住的地球。小王子发现人类缺乏想象力，只知像鹦鹉那样重复别人讲过的话。小王子这时越来越思念自己星球上的那枝小玫瑰。后来，小王子遇到一只小狐狸，小王子用耐心征服了小狐狸，与它结成了亲密的朋友。小狐狸把自己心中的秘密——肉眼看不见事务的本质，只有用心灵才能洞察一切——作为礼物，送给小王子。用这个秘密，小王子在撒哈拉大沙漠与遇险的飞行员一...(展开全部)', 'original_price': 22.0, 'ISBN': '9787020042494', 'dou_ban_url': 'https://book.douban.com/subject/1084336/', 'jd_url': None}
+2020-04-26 10:06:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/27614904/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:48 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/27614904/>
+{'image_url': 'https://img3.doubanio.com/view/subject/l/public/s29651121.jpg', 'title': '房思琪的初恋乐园', 'rate': '9.2', 'original_name': None, 'translator': None, 'author': '林奕含', 'publisher': '北京联合出版公司', 'publish_time': '2018-1', 'descripe': '令人心碎却无能为力的真实故事。向死而生的文学绝唱  打动万千读者的年度华语小说。李银河 戴锦华 骆以军 张悦然 冯唐 詹宏志 蒋方舟 史航 等多位学者作家社会名人郑重推荐。痛苦的际遇是如此难以分享，好险这个世界还有文学。我下楼拿作文给李老师改。他掏出来，我被逼到涂在墙上。老师说了九个字：“不行的话，嘴巴可以吧。”我说了五个字：“不行，我不会。”他就塞进来。那感觉像溺水。可以说话之后，我对老师说：“对不起。”有一种功课做不好的感觉。小小的房思琪住在金碧辉煌的人生里，她的脸和她可以想象的将来一样漂亮。补习班语文名师李国华是同一栋高级住宅的邻居。崇拜文学的小房思琪同样崇拜饱读诗书的李老师。有一天李老师说，你的程度这么好，不如每个礼拜交一篇作文给我吧，不收你周点费。思琪听话地下楼了。老师在家里等她，桌上没有纸笔。思琪的初恋是李老师。因为李老师把...(展开全部)', 'original_price': 45.0, 'ISBN': '9787559614636', 'dou_ban_url': 'https://book.douban.com/subject/27614904/', 'jd_url': 'https://book.douban.com/link2/?lowest=3920&pre=0&vendor=jingdong&srcpage=subject&price=4450&pos=2&url=http%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIHZR5aEQISA1AYUyUCEQRdGlkcBSJDCkMFSjJLQhBaUAscSkIBR0ROVw1VC0dFFQERD1QZUhIdS0IJRmtMfFJVElkuFGAaHTVLPVNjW1QLZhxTDh5pVhpbHB4TB0kYWQQBEAxQHVAVAiIAUBxdEgsRAGUbXxQGFjdlG1olUHzf462DsLMO0%252F%252BUjp2VIgZlG18VBRQEVh5ZFQoSAmUca8yCpdH3iYKLiMePwitrJTIiN1UrWA%253D%253D%26t%3DW1dCFBBFC1pXUwkEAEAdQFkJBVsWARoGVxJcCltXWwg%253D&cntvendor=4&srcsubj=27614904&type=bkbuy&subject=27614904'}
+2020-04-26 10:06:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/6082808/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:48 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/6082808/>
+{'image_url': 'https://img9.doubanio.com/view/subject/l/public/s6384944.jpg', 'title': '百年孤独', 'rate': '9.2', 'original_name': 'Cien años de soledad', 'translator': None, 'author': '[哥伦比亚]\n            加西亚·马尔克斯', 'publisher': '南海出版公司', 'publish_time': '2011-6', 'descripe': '《百年孤独》是魔幻现实主义文学的代表作，描写了布恩迪亚家族七代人的传奇故事，以及加勒比海沿岸小镇马孔多的百年兴衰，反映了拉丁美洲一个世纪以来风云变幻的历史。作品融入神话传说、民间故事、宗教典故等神秘因素，巧妙地糅合了现实与虚幻，展现出一个瑰丽的想象世界，成为20世纪最重要的经典文学巨著之一。1982年加西亚•马尔克斯获得诺贝尔文学奖，奠定世界级文学大师的地位，很大程度上乃是凭借《百年孤独》的巨大影响。', 'original_price': 39.5, 'ISBN': '9787544253994', 'dou_ban_url': 'https://book.douban.com/subject/6082808/', 'jd_url': 'https://book.douban.com/link2/?lowest=3950&pre=0&vendor=jingdong&srcpage=subject&price=3950&pos=1&url=http%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIOZR5aEQISA1AYUyUCEwBRElwQBSJDCkMFSjJLQhBaUAscSkIBR0ROVw1VC0dFFQMVA1wcXhIdS0IJRmsdUWxZI0EpdGJyBFJ5AHF2VnsLTTlDDh43Uh5cEwUbBFIrWxEDFgNlK1sUMkBpja3tzaejG4Gx1MCKhTdUK1sQCxsDUBpeEgURAVcrXCXbkrCDucnMnJjS3YxrJTIi%26t%3DW1dCFBBFC1pXUwkEAEAdQFkJBVsUBRYOUh5cCltXWwg%253D&cntvendor=2&srcsubj=6082808&type=bkbuy&subject=6082808'}
+2020-04-26 10:06:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/1007305/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/1007305/>
+{'image_url': 'https://img1.doubanio.com/view/subject/l/public/s1070959.jpg', 'title': '红楼梦', 'rate': '9.6', 'original_name': None, 'translator': None, 'author': '[清] 曹雪芹 著', 'publisher': '人民文学出版社', 'publish_time': '1996-12', 'descripe': '《红楼梦》是一部百科全书式的长篇小说。以宝黛爱情悲剧为主线，以四大家族的荣辱兴衰为背景，描绘出18世纪中国封建社会的方方面面，以及封建专制下新兴资本主义民主思想的萌动。结构宏大、情节委婉、细节精致，人物形象栩栩如生，声口毕现，堪称中国古代小说中的经 典。由红楼梦研究所校注、人民文学出版社出版的《红楼梦》以庚辰（1760）本《脂砚斋重评石头记》为底本，以甲戌（1754）本、已卯（1759）本、蒙古王府本、戚蓼生序本、舒元炜序本、郑振铎藏本、红楼梦稿本、列宁格勒藏本（俄藏本）、程甲本、程乙本等众多版本为参校本，是一个博采众长、非常适合大众阅读的本子；同时，对底本的重要修改，皆出校记，读者可因以了解《红楼梦》的不同版本状况。红学所的校注本已印行二十五年，其间1994年曾做过一次修订，又十几年过去，2008年推出修订第三版，体现了新的校注成果和科研成果。...(展开全部)', 'original_price': 59.7, 'ISBN': '9787020002207', 'dou_ban_url': 'https://book.douban.com/subject/1007305/', 'jd_url': 'https://book.douban.com/link2/?lowest=2570&pre=0&vendor=jingdong&srcpage=subject&price=5970&pos=1&url=http%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIOZR5aEQISA1AYUyUCEwZUElgQBiJDCkMFSjJLQhBaUAscSkIBR0ROVw1VC0dFFQMTBlwYXhEdS0IJRmt3XkBjLRMIaWB2HQxmH1N1eURWQCVDDh43Uh5cEwUbBFIrWxEDFgNlK1sUMkBpja3tzaejG4Gx1MCKhTdUK1sQChMOUR5eEQYVA1QrXCXbkrCDucnMnJjS3YxrJTIi%26t%3DW1dCFBBFC1pXUwkEAEAdQFkJBVsUAxMOVh5fCltXWwg%253D&cntvendor=4&srcsubj=1007305&type=bkbuy&subject=1007305'}
+2020-04-26 10:06:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/10554308/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/1770782/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/10554308/>
+{'image_url': 'https://img1.doubanio.com/view/subject/l/public/s24514468.jpg', 'title': '白夜行', 'rate': '9.1', 'original_name': None, 'translator': '刘姿君', 'author': '[日] 东野圭吾', 'publisher': '南海出版公司', 'publish_time': '2013-1-1', 'descripe': '东野圭吾万千书迷心中的无冕之王周刊文春推理小说年度BEST10第1名本格推理小说年度BEST10第2名《白夜行》是东野圭吾迄今口碑最好的长篇杰作，具备经典名著的一切要素：一宗离奇命案牵出跨度近20年步步惊心的故事：悲凉的爱情、吊诡的命运、令人发指的犯罪、复杂人性的对决与救赎……-------------------------------------------------------------------1973年，大阪的一栋废弃建筑中发现一名遭利器刺死的男子。案件扑朔迷离，悬而未决。此后20年间，案件滋生出的恶逐渐萌芽生长，绽放出恶之花。案件相关者的人生逐渐被越来越重的阴影笼罩……“我的天空里没有太阳，总是黑夜，但并不暗，因为有东西代替了太阳。虽然没有太阳那么明亮，但对我来说已经足够。凭借着这份光，我便能把黑夜当成白天。我从...(展开全部)', 'original_price': 39.5, 'ISBN': '9787544258609', 'dou_ban_url': 'https://book.douban.com/subject/10554308/', 'jd_url': 'https://book.douban.com/link2/?lowest=2540&pre=0&vendor=jingdong&srcpage=subject&price=3160&pos=1&url=http%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIOZR5aEQISA1AYUyUCEgdRGVMRASJDCkMFSjJLQhBaUAscSkIBR0ROVw1VC0dFFQISA1cTXxYdS0IJRmt9emV%252BCF4HC2FgZQtFJhNgbHEeSUVTDh43Uh5cEwUbBFIrWxEDFgNlK1sUMkBpja3tzaejG4Gx1MCKhTdUK1sQCxsDUBpTFwEXBlMrXCXbkrCDucnMnJjS3YxrJTIi%26t%3DW1dCFBBFC1pXUwkEAEAdQFkJBVsVAhYFXR9YCltXWwg%253D&cntvendor=2&srcsubj=10554308&type=bkbuy&subject=10554308'}
+2020-04-26 10:06:51 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/1770782/>
+{'image_url': 'https://img3.doubanio.com/view/subject/l/public/s1727290.jpg', 'title': '追风筝的人', 'rate': '8.9', 'original_name': 'The Kite Runner', 'translator': None, 'author': '[美]\n            卡勒德·胡赛尼', 'publisher': '上海人民出版社', 'publish_time': '2006-5', 'descripe': '12岁的阿富汗富家少爷阿米尔与仆人哈桑情同手足。然而，在一场风筝比赛后，发生了一件悲惨不堪的事，阿米尔为自己的懦弱感到自责和痛苦，逼走了哈桑，不久，自己也跟随父亲逃往美国。成年后的阿米尔始终无法原谅自己当年对哈桑的背叛。为了赎罪，阿米尔再度踏上暌违二十多年的故乡，希望能为不幸的好友尽最后一点心力，却发现一个惊天谎言，儿时的噩梦再度重演，阿米尔该如何抉择？故事如此残忍而又美丽，作者以温暖细腻的笔法勾勒人性的本质与救赎，读来令人荡气回肠。', 'original_price': 29.0, 'ISBN': '9787208061644', 'dou_ban_url': 'https://book.douban.com/subject/1770782/', 'jd_url': 'https://book.douban.com/link2/?lowest=1820&pre=0&vendor=jingdong&srcpage=subject&price=2900&pos=2&url=http%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIOZR5aEQISA1AYUyUCEgRRElMTBSJDCkMFSjJLQhBaUAscSkIBR0ROVw1VC0dFFQIRA1wTXRIdS0IJRmtDQXFZLn0STGFCYRRLOhNDZ1I9WT9lDh43Uh5cEwUbBFIrWxEDFgNlK1sUMkBpja3tzaejG4Gx1MCKhTdUK1sQCxsDUBpfHAAQBFIrXCXbkrCDucnMnJjS3YxrJTIi%26t%3DW1dCFBBFC1pXUwkEAEAdQFkJBVsVARYOXR1cCltXWwg%253D&cntvendor=4&srcsubj=1770782&type=bkbuy&subject=1770782'}
+2020-04-26 10:06:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://book.douban.com/subject/25862578/> (referer: https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4)
+2020-04-26 10:06:51 [scrapy.core.scraper] DEBUG: Scraped from <200 https://book.douban.com/subject/25862578/>
+{'image_url': 'https://img3.doubanio.com/view/subject/l/public/s27264181.jpg', 'title': '解忧杂货店', 'rate': '8.5', 'original_name': 'ナミヤ雑貨店の奇蹟', 'translator': '李盈春', 'author': '[日]\n            东野圭吾', 'publisher': '南海出版公司', 'publish_time': '2014-5', 'descripe': '现代人内心流失的东西，这家杂货店能帮你找回——僻静的街道旁有一家杂货店，只要写下烦恼投进卷帘门的投信口，第二天就会在店后的牛奶箱里得到回答。因男友身患绝症，年轻女孩静子在爱情与梦想间徘徊；克郎为了音乐梦想离家漂泊，却在现实中寸步难行；少年浩介面临家庭巨变，挣扎在亲情与未来的迷茫中……他们将困惑写成信投进杂货店，随即奇妙的事情竟不断发生。生命中的一次偶然交会，将如何演绎出截然不同的人生？如今回顾写作过程，我发现自己始终在思考一个问题：站在人生的岔路口，人究竟应该怎么做？我希望读者能在掩卷时喃喃自语：我从未读过这样的小说。——东野圭吾', 'original_price': 39.5, 'ISBN': '9787544270878', 'dou_ban_url': 'https://book.douban.com/subject/25862578/', 'jd_url': 'https://book.douban.com/link2/?lowest=1950&pre=0&vendor=jingdong&srcpage=subject&price=3950&pos=2&url=http%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIOZR5aEQISA1AYUyUCEgJRGFIQAyJDCkMFSjJLQhBaUAscSkIBR0ROVw1VC0dFFQIXA1YSXhQdS0IJRmt3X0RALUYbTmFGVzRTE0VQSUBLUF5TDh43Uh5cEwUbBFIrWxEDFgNlK1sUMkBpja3tzaejG4Gx1MCKhTdUK1sQCxsDUBpfEQAXD1YrXCXbkrCDucnMnJjS3YxrJTIi%26t%3DW1dCFBBFC1pXUwkEAEAdQFkJBVsVBxYEXB5aCltXWwg%253D&cntvendor=4&srcsubj=25862578&type=bkbuy&subject=25862578'}
+2020-04-26 10:06:51 [scrapy.core.engine] INFO: Closing spider (finished)
+2020-04-26 10:06:51 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 8259,
+ 'downloader/request_count': 21,
+ 'downloader/request_method_count/GET': 21,
+ 'downloader/response_bytes': 964175,
+ 'downloader/response_count': 21,
+ 'downloader/response_status_count/200': 21,
+ 'elapsed_time_seconds': 16.085037,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 4, 26, 2, 6, 51, 633008),
+ 'item_scraped_count': 18,
+ 'log_count/DEBUG': 39,
+ 'log_count/ERROR': 2,
+ 'log_count/INFO': 10,
+ 'log_count/WARNING': 1,
+ 'request_depth_max': 1,
+ 'response_received_count': 21,
+ 'scheduler/dequeued': 21,
+ 'scheduler/dequeued/memory': 21,
+ 'scheduler/enqueued': 21,
+ 'scheduler/enqueued/memory': 21,
+ 'spider_exceptions/KeyError': 2,
+ 'start_time': datetime.datetime(2020, 4, 26, 2, 6, 35, 547971)}
+2020-04-26 10:06:51 [scrapy.core.engine] INFO: Spider closed (finished)

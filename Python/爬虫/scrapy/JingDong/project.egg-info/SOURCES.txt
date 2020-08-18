@@ -1,0 +1,16 @@
+setup.py
+JingDong/__init__.py
+JingDong/items.py
+JingDong/main.py
+JingDong/middlewares.py
+JingDong/pipelines.py
+JingDong/settings.py
+JingDong/spiders/Demo.py
+JingDong/spiders/DouBanBookList.py
+JingDong/spiders/TypeList.py
+JingDong/spiders/__init__.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt

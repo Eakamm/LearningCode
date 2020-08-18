@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="default" uuid="48de36fc-deb6-4f17-919c-31cf05ee1810">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\11346\OneDrive\Code\LearningCode\Python\爬虫\scrapy\JingDong\dbs\default.db</jdbc-url>
+    </data-source>
+  </component>
+</project>

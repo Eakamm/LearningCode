@@ -39,6 +39,8 @@ def analysis_html(content, data):
         book = {}
         # 确保其为bs4.element.Tag标签类型
         if type(li) == bs4.element.Tag:
+            img = li.a.img
+            book['imageUrl'] = img['src']
             # 循环获取每个标签
             for p in li.div.children:
                 # 通过名字判断获取p标签
@@ -64,6 +66,8 @@ def analysis_html(content, data):
                 elif p.name == 'h2':
                     book['title'] = p.a.string
             data.append(book)
+        else:
+            print("标签类型错误！")
 
 
 def store_data(data):
