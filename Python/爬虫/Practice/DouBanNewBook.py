@@ -82,8 +82,9 @@ def main():
     data = []
     url = 'https://book.douban.com/latest?icn=index-latestbook-all'
     content = get_html(url)
-    analysis_html(content, data)
-    store_data(data)
+    print(content)
+    # analysis_html(content, data)
+    # store_data(data)
 
 
 main()

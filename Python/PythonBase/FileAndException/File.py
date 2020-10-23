@@ -6,9 +6,10 @@
 @Description: In User Settings Edit:
 @FilePath: \PythonPersonal\PythonBase\FileAndException\File.py
 '''
+import datetime
 # 打开文件读取返回字符串
 # with open('PythonBase/FileAndException/Need_File/pi_digits.txt') as file_object:
-#     lines = file_object.read()12
+#     lines = file_object.read()
 #     print(lines.rstrip())
 
 # 打开文件按行读取
@@ -28,8 +29,18 @@
 # I love creating new games.
 # I also love finding meaning in large datasets.
 # I love creating apps that can run in a browser.
-# with open('PythonBase/FileAndException/Need_File/programming.txt', 'w') as write_file:
-#     write_file.write('I love programming.I\'m '+my_birthday)
+# my_birthday = input()
+# with open('PythonBase/FileAndException/Need_File/programming.txt', 'w', encoding="utf-8") as write_file:
+#     write_file.write('I love 哈哈 programming.I\'m '+my_birthday)
+
+# 备份
+with open("PythonBase/FileAndException/Need_File/programming.txt") as pr:
+    lines = pr.readlines()
+
+now = datetime.datetime.now()
+file_name = now.strftime(r"%Y%m%d%H%M%S") + ".txt"
+with open("PythonBase/FileAndException/Need_File/" + file_name, "w") as bf:
+    bf.writelines(lines)
 
 # 异常
 # try:
@@ -155,15 +166,15 @@
 
 # setup()
 
-import re
+# import re
 
-str = 'Python'
-try:
-    matchObj = re.match(r'[P]\S+', str)
-    if matchObj:
-        print(matchObj.group())
-except AttributeError:
-    print('continue')
+# str = 'Python'
+# try:
+#     matchObj = re.match(r'[P]\S+', str)
+#     if matchObj:
+#         print(matchObj.group())
+# except AttributeError:
+#     print('continue')
 
-matchObj = re.match(r'[y]\S+', str)
-print(matchObj.group())
+# matchObj = re.match(r'[y]\S+', str)
+# print(matchObj.group())

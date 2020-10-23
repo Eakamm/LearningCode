@@ -1,0 +1,2 @@
+
+series = df.apply(f)

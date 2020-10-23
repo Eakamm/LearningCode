@@ -8,12 +8,13 @@ class Car:
         """Initialize attributes to describe a car."""
         self.manufacturer = manufacturer
         self.model = model
-        self.year = year
+        self.__year = year
         self.odometer_reading = 0
 
     def get_descriptive_name(self):
         """Return a neatly formatted descriptive name."""
-        long_name = str(self.year) + ' ' + self.manufacturer + ' ' + self.model
+        long_name = str(self.__year) + ' ' + \
+            self.manufacturer + ' ' + self.model
         return long_name.title()
 
     def read_odometer(self):

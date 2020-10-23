@@ -1,30 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-	
+    <!-- 登录 -->
+    <Login/>
+
+    <!--  -->
+    <!-- <TabBar/> -->
+
+    <!-- Vuex -->
+    <!-- <Vuex/> -->
 	<!-- <a href="../public/index.html">jjjj</a> -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Login from './views/Login'
+import TabBar from './views/components/TabBar/TabBar'
+import Vuex from './views/Vuex/Vuex'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    // TabBar
+    Login,
+    Vuex
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

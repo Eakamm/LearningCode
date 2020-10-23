@@ -46,7 +46,7 @@ highs = []
 dates = []
 # 最低气温
 lows = []
-filename = 'Python\PythonPersonal\小项目\数据可视化\获取文件\sitka_weather_2014.csv'
+filename = '小项目/数据可视化/获取文件/sitka_weather_2014.csv'
 get_file_data(filename, highs, lows, dates)
 fig = plt.figure(dpi=128, figsize=(10, 6))
 # 设置数据

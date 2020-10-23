@@ -1,8 +1,9 @@
 {
-  "folders": [
-    {
-      "path": "."
-    }
-  ],
-  "settings": {}
+  "folders": [{
+    "path": "."
+  }],
+  "settings": {
+    "python.pythonPath": "D:\\DevelopmentEnvironment\\Anaconda3-2020.07\\python.exe"
+  },
+  "editor.fontLigatures": null,
 }
